@@ -1,0 +1,5 @@
+/resources/
+/public/
+/themes
+/.hugo_build.lock
+hugo-assets.tgz
