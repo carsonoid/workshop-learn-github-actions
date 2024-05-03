@@ -1,0 +1,20 @@
+name: 'Hugo Build'
+description: 'Run a hugo build in a container with all the dependencies'
+inputs:
+  repoOwner:
+    description: 'The owner of the repository'
+    required: true
+    default: ${{ github.repository_owner }}
+  repoName:
+    description: 'The owner of the repository'
+    required: true
+    default: ${{ github.repository_owner }}
+runs:
+  using: 'docker'
+  image: hugomods/hugo:ci # kitchen-sink hugo image
+  args:
+    - hugo
+    - build
+    - --minify
+    - -b
+    - ${{ format('https://{0}.github.io/{1}/', inputs.repoOwner, inputs.repoName) }}
