@@ -15,6 +15,7 @@ on:
 
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-20.04
     permissions:
       contents: write
