@@ -35,32 +35,43 @@
         }
     }
 
-    // find all elements with class "nextSegment" and attach a new click event to them
-    var nextSegment = document.getElementsByClassName("nextSegment");
-    for (var i = 0; i < nextSegment.length; i++) {
-        nextSegment[i].addEventListener("click", function() {
-            console.log("clicked");
-            // find the next div with class pagebreak
-            var next = this.nextElementSibling;
-            while (next) {
-                console.log(next);
-                if (next.classList.contains("pagebreak")) {
-                    // find the first heading after the div
-                    var heading = next.nextElementSibling;
-                    while (heading) {
-                        if (heading.tagName == "H1" || heading.tagName == "H2" || heading.tagName == "H3" || heading.tagName == "H4" || heading.tagName == "H5" || heading.tagName == "H6") {
-                            // scroll to the heading
-                            heading.scrollIntoView();
-                            // set the url hash to the heading id
-                            window.location.hash = heading.id;
-                            return;
-                        }
-                        heading = heading.nextElementSibling;
-                    }
-                }
-                next = next.nextElementSibling;
+    // get_next_heading gets the next heading
+    get_next_heading = function(element) {
+        var next = element.nextElementSibling;
+        while (next) {
+            if (next.tagName == "H1" || next.tagName == "H2" || next.tagName == "H3" || next.tagName == "H4" || next.tagName == "H5" || next.tagName == "H6") {
+                return next;
             }
+            next = next.nextElementSibling;
+        }
+        return null;
+    }
+
+    // find all elements with class "nextSegment" and attach a new click event to them
+    var nextSegments = document.getElementsByClassName("nextSegment");
+    for (var i = 0; i < nextSegments.length; i++) {
+        let cur = nextSegments[i];
+        let nextHeading = get_next_heading(cur);
+
+        if (nextHeading == null) {
+            break;
+        }
+
+        cur.addEventListener("click", function() {
+            nextHeading.scrollIntoView();
+            // scroll to the heading
+            nextHeading.scrollIntoView();
+            // set the url hash to the heading id
+            window.location.hash = nextHeading.id;
         });
+
+        // append the heading text to the button, trimming trailing " #"
+        // this is lazy, but it works
+        let headingText = nextHeading.innerText;
+        if (headingText.endsWith(" #")) {
+            headingText = headingText.substring(0, headingText.length - 2);
+        }
+        cur.innerText = cur.innerText + " (" + headingText +")";
     }
 
     // find all elements with class "prevSegment" and attach a new click event to them
