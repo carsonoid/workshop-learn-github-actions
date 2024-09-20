@@ -1,8 +1,6 @@
 name: CI/CD
 
-on:
-  push:
-    branches: [ main, dev ]
+on: push
 
 jobs:
   build:
@@ -12,7 +10,8 @@ jobs:
       contents: write
     steps:
       # Checkout the repository
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
           submodules: true
           fetch-depth: 0
@@ -21,14 +20,18 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest' # WORKSHOP TASK: pin this based on the `config.toml`
+          hugo-version: 'latest'
           extended: true
 
       # Build assets
       - name: Build
         run: hugo --minify
 
-      # List built assets
-      - run: tree public
-
-      # WORKSHOP TASK: Do something with the built files
+      # Deploy to GitHub Pages
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev' # TODO(final): cleanup
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          cname: guts-of-git.carson-anderson.com
