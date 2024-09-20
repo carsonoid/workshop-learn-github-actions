@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on Learn GitHub Actions By Deploying this Workshop</title><link>https://learn-github-actions.carson-anderson.com/</link><description>Recent content in Introduction on Learn GitHub Actions By Deploying this Workshop</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://learn-github-actions.carson-anderson.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Preamble</title><link>https://learn-github-actions.carson-anderson.com/workshop/preamble/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop/preamble/</guid><description>&lt;h1 id="preamble">
+ Preamble
+ &lt;a class="anchor" href="#preamble">#&lt;/a>
+&lt;/h1>
+
+
+
+
+
+&lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
+ Next
+&lt;/a>
+
+
+
+
+&lt;div class="pagebreak">&lt;/div>
+
+&lt;h2 id="about-github-actions">
+ About GitHub Actions
+ &lt;a class="anchor" href="#about-github-actions">#&lt;/a>
+&lt;/h2>
+
+
+
+&lt;a rel="noopener" class="book-btn prevSegment">
+ Back
+&lt;/a>
+
+
+
+&lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
+ Next
+&lt;/a>
+
+
+
+
+&lt;div class="pagebreak">&lt;/div>
+
+&lt;h3 id="basic-architecture">
+ Basic Architecture
+ &lt;a class="anchor" href="#basic-architecture">#&lt;/a>
+&lt;/h3>
+
+
+
+&lt;a rel="noopener" class="book-btn prevSegment">
+ Back
+&lt;/a>
+
+
+
+&lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
+ Next
+&lt;/a>
+
+
+
+
+&lt;div class="pagebreak">&lt;/div>
+
+&lt;h2 id="about-hugo-the-generator-for-this-site">
+ About Hugo (The generator for this site)
+ &lt;a class="anchor" href="#about-hugo-the-generator-for-this-site">#&lt;/a>
+&lt;/h2>
+
+
+
+&lt;a rel="noopener" class="book-btn prevSegment">
+ Back
+&lt;/a>
+
+
+
+
+
+
+&lt;div class="pagebreak">&lt;/div></description></item><item><title>1 - Create the Repository</title><link>https://learn-github-actions.carson-anderson.com/workshop/create-repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop/create-repo/</guid><description>&lt;h1 id="create-the-repository">
+ Create the Repository
+ &lt;a class="anchor" href="#create-the-repository">#&lt;/a>
+&lt;/h1>
+&lt;p>First, you will need to create a new repository on GitHub. This repository will be used to store the code for the workshop and will
+be the repository which will run all the GitHub Actions and Workflows.&lt;/p>
+&lt;p>We are going to make a new repository using the GitHub web interface.&lt;/p>
+&lt;h2 id="instructions">
+ Instructions
+ &lt;a class="anchor" href="#instructions">#&lt;/a>
+&lt;/h2>
+&lt;p>Open up the &lt;a href="https://github.com/new">New Repository Page&lt;/a> and fill it out with these suggested settings:&lt;/p></description></item><item><title>2 - Introducing GitHub Actions</title><link>https://learn-github-actions.carson-anderson.com/workshop/introduction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop/introduction/</guid><description>&lt;h1 id="basics">
+ Basics
+ &lt;a class="anchor" href="#basics">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="workflows">
+ Workflows
+ &lt;a class="anchor" href="#workflows">#&lt;/a>
+&lt;/h2>
+&lt;h2 id="actions">
+ Actions
+ &lt;a class="anchor" href="#actions">#&lt;/a>
+&lt;/h2></description></item><item><title>3 - First Workflow</title><link>https://learn-github-actions.carson-anderson.com/workshop/first-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop/first-workflow/</guid><description>&lt;h1 id="first-workflow">
+ First Workflow
+ &lt;a class="anchor" href="#first-workflow">#&lt;/a>
+&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">CI/CD&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">on&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">push&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">branches&lt;/span>: [ &lt;span style="color:#ae81ff">main, dev ]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">jobs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">build&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Build&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">runs-on&lt;/span>: &lt;span style="color:#ae81ff">ubuntu-20.04&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">permissions&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">contents&lt;/span>: &lt;span style="color:#ae81ff">write&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">steps&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># Checkout the repository&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">actions/checkout@v3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">submodules&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">fetch-depth&lt;/span>: &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># Install hugo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Setup Hugo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">peaceiris/actions-hugo@v3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">hugo-version: &amp;#39;latest&amp;#39; # WORKSHOP TASK&lt;/span>: &lt;span style="color:#ae81ff">pin this based on the `config.toml`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">extended&lt;/span>: &lt;span style="color:#66d9ef">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># Build assets&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Build&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">run&lt;/span>: &lt;span style="color:#ae81ff">hugo --minify&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># List built assets&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">run&lt;/span>: &lt;span style="color:#ae81ff">tree public&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># WORKSHOP TASK: Do something with the built files&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
