@@ -109,7 +109,7 @@ jobs:
       # Use contexts
       # Ref: https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs
       - name: Contexts
-        if: $(github.ref) == 'refs/heads/main' || true # use the `github` context in a conditional
+        if: github.ref == 'refs/heads/main' || true # use the `github` context in a conditional
         run: |
           echo "# Here are some github context values:"
           echo "The branch is ${{ github.ref }}"
