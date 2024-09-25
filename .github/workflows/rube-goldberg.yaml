@@ -16,19 +16,19 @@ jobs:
           submodules: true
           fetch-depth: 0
 
-      # Get the minimum required version of Hugo by parsing the theme.toml file
-      - uses: SebRollen/toml-action@4cdab426d5e7838199ed25c199e8c0a1ce806671
-        id: read_toml
-        with:
-          file: 'themes/hugo-book/theme.toml'
-          field: 'min_version'
-
       # Install hugo
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: ${{ steps.read_toml.outputs.value }}
+          hugo-version: latest
           extended: true
+
+      # Get the title of the site by parsing the config.toml file
+      - uses: SebRollen/toml-action@4cdab426d5e7838199ed25c199e8c0a1ce806671
+        id: read_toml
+        with:
+          file: 'config.toml'
+          field: 'title'
 
       # Build assets
       - name: Build
@@ -38,7 +38,7 @@ jobs:
       - name: Output
         run: |
           echo "::set-output name=HUGO_VERSION::$(hugo version)"
-          echo "::set-output name=HUGO_MIN_VERSION::${{ steps.read_toml.outputs.value }}"
+          echo "::set-output name=HUGO_TITLE::${{ steps.read_toml.outputs.value }}"
 
       # Use logging features, including the use of workflow commands
       # Ref: https://docs.github.com/en/actions/writing-workflows/working-with-actions#logging-commands
@@ -165,6 +165,6 @@ jobs:
           {
             echo "# Summary"
             echo "Hugo version: ${{ steps.build.outputs.HUGO_VERSION }}"
-            echo "Minimum Hugo version: ${{ steps.build.outputs.HUGO_MIN_VERSION }}"
+            echo "Hugo title: ${{ steps.build.outputs.HUGO_TITLE }}"
             echo "The build is complete at $(date)"
           } >> $GITHUB_STEP_SUMMARY
