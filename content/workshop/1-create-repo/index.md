@@ -1,6 +1,6 @@
 ---
 weight: 1
-title: "1 - Create the Repository"
+title: 1 - Create the Repository
 ---
 
 # Create the Repository

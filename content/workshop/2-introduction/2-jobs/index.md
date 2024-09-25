@@ -1,10 +1,12 @@
 ---
 weight: 2
-title: "2 - Introducing GitHub Actions"
+title: "2 - Jobs"
 ---
 
 # Basics
 
 ## Workflows
+
+## Jobs
 
 ## Actions

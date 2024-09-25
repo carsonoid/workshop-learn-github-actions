@@ -1,6 +1,6 @@
 ---
 weight: 3
-title: "3 - First Workflow"
+title: 3 - First Workflow
 ---
 
 # First Workflow

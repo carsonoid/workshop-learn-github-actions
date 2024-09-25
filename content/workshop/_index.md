@@ -1,5 +1,6 @@
 ---
 title: Workshop
+weight: 1
 ---
 
 # Workshop: Learning GitHub Actions
