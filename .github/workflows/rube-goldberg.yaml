@@ -37,22 +37,22 @@ jobs:
       # Add outputs using information from the current workspace and other steps
       - name: Output
         run: |
+          # the workflows may use the legacy output printing method
           echo "::set-output name=HUGO_VERSION::$(hugo version)"
           echo "::set-output name=HUGO_TITLE::${{ steps.read_toml.outputs.value }}"
+
+          # but you should use the new, preferred method
+          echo "HUGO_VERSION=$(hugo version)" >> $GITHUB_OUTPUT
+          echo "HUGO_TITLE=${{ steps.read_toml.outputs.value }}" >> $GITHUB_OUTPUT
 
       # Use logging features, including the use of workflow commands
       # Ref: https://docs.github.com/en/actions/writing-workflows/working-with-actions#logging-commands
       # Ref: https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/workflow-commands-for-github-actions#grouping-log-lines
       - name: Logging
         run: |
-          # messages printed to stdout are normal messages
-          echo "This is a normal message"
-
-          # messages printed to stderr are shown differently
-          echo "This is a warning" >&2
-          echo "This is an error" >&2
-          echo "This is a debug message" >&2
-          echo "This is a success message" >&2
+          # prints to stdout and stderr are automatically logged
+          echo "This is a normal print (stdout)"
+          echo "This is a print to stderr" >&2
 
           # Grouped messages are shown in a collapsible section
           echo "::group::My title"
@@ -61,15 +61,16 @@ jobs:
           echo "Inside group warning" >&2
           echo "::endgroup::"
 
+          echo "# Here are some masked strings"
           # Secrets are automatically redacted
           echo "This is a secret: ${{ secrets.GITHUB_TOKEN }}"
-
           # You can add a mask to any string manually if needed
           echo "::add-mask::This is a secret"
           echo "You can't see this -> This is a secret"
 
           # If your output happens to include workflow commands, you can escape them
           # so that they are printed as-is
+          echo "# Here are escaped commands"
           echo "::stop-commands::my-special-rare-token"
           echo "::group::This group will be ignored"
           echo "This is a normal message"
@@ -160,6 +161,9 @@ jobs:
           publish_dir: ./public
           cname: guts-of-git.carson-anderson.com
 
+      # TODO: state?
+
+      # Add a summary
       - name: Summary
         run: |
           {
@@ -167,4 +171,7 @@ jobs:
             echo "Hugo version: ${{ steps.build.outputs.HUGO_VERSION }}"
             echo "Hugo title: ${{ steps.build.outputs.HUGO_TITLE }}"
             echo "The build is complete at $(date)"
+            echo "Summaries respect masks"
+            echo "Secrets are redacted: ${{ secrets.GITHUB_TOKEN }}"
+            echo "Custom masks are respected so this will not show -> This is a secret"
           } >> $GITHUB_STEP_SUMMARY

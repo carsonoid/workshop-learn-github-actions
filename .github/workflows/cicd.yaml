@@ -4,6 +4,7 @@ on: push
 
 jobs:
   build:
+    if : github.ref == 'refs/heads/main'
     name: Build
     runs-on: ubuntu-20.04
     permissions:
@@ -30,7 +31,6 @@ jobs:
       # Deploy to GitHub Pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
