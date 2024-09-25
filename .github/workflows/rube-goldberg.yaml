@@ -38,8 +38,7 @@ jobs:
       - name: Output
         run: |
           # the workflows may use the legacy output printing method
-          echo "::set-output name=HUGO_VERSION::$(hugo version)"
-          echo "::set-output name=HUGO_TITLE::${{ steps.read_toml.outputs.value }}"
+          echo "::set-output name=OLD_OUTPUT::value"
 
           # but you should use the new, preferred method
           echo "HUGO_VERSION=$(hugo version)" >> $GITHUB_OUTPUT
@@ -125,8 +124,8 @@ jobs:
           echo "Env from file write: ${{ env.ENV_FROM_FILE_WRITE }}"
 
           echo "# Here are some vars context values:"
-          echo "A var set in the repo: ${{ vars.VAR_FROM_REPO }}"
-          echo "Another var in the repo: ${{ vars.VAR_FROM_REPO_2 }}"
+          echo "A var set in the repo: ${{ vars.REPO_VAR }}"
+          echo "Another var in the repo: ${{ vars.REPO_VAR_2 }}"
 
           echo "# Here are some job context values:"
           echo "The job is ${{ github.job }}"
@@ -149,13 +148,13 @@ jobs:
 
           echo "# Here are some secrets context values:"
           echo "The secret is ${{ secrets.GITHUB_TOKEN }}"
-          echo "The secret is ${{ secrets.SECRET_FROM_REPO }}"
+          echo "The secret is ${{ secrets.REPO_SECRET }}"
 
 
       # Deploy to GitHub Pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev' # TODO(final): cleanup
+        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
@@ -168,10 +167,11 @@ jobs:
         run: |
           {
             echo "# Summary"
+            echo "## Hugo"
             echo "Hugo version: ${{ steps.build.outputs.HUGO_VERSION }}"
             echo "Hugo title: ${{ steps.build.outputs.HUGO_TITLE }}"
             echo "The build is complete at $(date)"
-            echo "Summaries respect masks"
+            echo "## Summaries respect masks"
             echo "Secrets are redacted: ${{ secrets.GITHUB_TOKEN }}"
             echo "Custom masks are respected so this will not show -> This is a secret"
           } >> $GITHUB_STEP_SUMMARY
