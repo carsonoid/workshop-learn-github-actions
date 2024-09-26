@@ -31,22 +31,33 @@ Everything else can be left unchecked. We will be bootstraping the contents of t
 ## Bootstrap The Repository Contents
 
 1. Open the respository in GitHub
-2. Click "Create a codespace"
-3. Click "Create new codespace"
-4. Use the terminal to download and extract the assets for the workshop
-    ```
+2. Click the `Code` button
+  ![code button](code-button.png)
+1. Click the "Codespaces tab"
+2. Click "Create codespace on main"
+  ![codespace on main](codespace-on-main.png)
+3. Wait for the page to load
+![new codespace](codespace.png)
+5. Use the terminal to download and extract the assets for the workshop
+    ```bash
     curl {{< abs-url "workshop-assets.tgz" >}} | tar -zxv
     ```
-    * Alternatively, you can [download the assets]({{< abs-url "workshop-assets.tgz" >}}) then right click in the file explorer and choose "Upload File", then run `tar -zxvf workshop-assets.tgz`
+    * Alternatively, you can [download the assets]({{< abs-url "workshop-assets.tgz" >}}) then right click in the file explorer and choose "Upload", then run `tar -zxvf workshop-assets.tgz`
 
 {{< page-break                                                               >}}
 
 ## Run the site live
 
-The default codespace image actually comes with `hugo` pre-installed! So you can easily view the site live
+The default codespace image comes with `hugo` pre-installed, but it does not have some features required by this site, so we need to install the extended edition:
 
 ```bash
-hugo server
+curl -L https://github.com/gohugoio/hugo/releases/download/v0.134.3/hugo_extended_0.134.3_linux-amd64.tar.gz | tar -zxv hugo
+```
+
+Then run the version we installed:
+
+```bash
+./hugo server
 ```
 
 ```txt
@@ -84,7 +95,7 @@ Press Ctrl+C to stop
 The default codespace image actually comes with `hugo` pre-installed! So you can easily test that the bootstrapped site builds by just running `hugo` which builds by default
 
 ```bash
-hugo
+./hugo
 ```
 
 ```txt

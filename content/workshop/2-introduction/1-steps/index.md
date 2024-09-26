@@ -51,3 +51,5 @@ Complex scripts may use the yaml multiline syntax to provide
     sleep 1
     echo "done"
 ```
+
+{{< page-break last="true" nextRef="/workshop/2-introduction/2-jobs" >}}
