@@ -92,7 +92,7 @@ Press Ctrl+C to stop
 
 ## Build the site
 
-The default codespace image actually comes with `hugo` pre-installed! So you can easily test that the bootstrapped site builds by just running `hugo` which builds by default
+Runing `hugo server` builds the site for local viewing, but it does not build production-ready assets. To do that, simply run `hugo` without any arguments.
 
 ```bash
 ./hugo
@@ -119,4 +119,4 @@ Total in 101 ms
 
 Success! Now we have a `public` directory inside the codespace that contains all the static web assets needed to serve our site.
 
-{{< page-break last="true" >}}
+{{< page-break last="true" nextRef="/workshop/2-introduction" >}}

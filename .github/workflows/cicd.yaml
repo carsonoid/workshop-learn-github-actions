@@ -10,25 +10,21 @@ jobs:
     permissions:
       contents: write
     steps:
-      # Checkout the repository
       - name: Checkout
         uses: actions/checkout@v3
         with:
           submodules: true
           fetch-depth: 0
 
-      # Install hugo
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
           extended: true
 
-      # Build assets
       - name: Build
         run: hugo --minify
 
-      # Deploy to GitHub Pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
