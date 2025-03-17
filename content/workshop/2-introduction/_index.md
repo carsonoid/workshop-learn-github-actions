@@ -30,6 +30,8 @@ we need to understand the fundamental building blocks of GitHub Actions.
 The yaml snippets below are simplified to help understand the main building-blocks of GitHub Actions. They will not work if copied directly.
 {{< /hint >}}
 
+<iframe src="http://localhost:1313/diagrams/scratch.sozi.html" width="100%" height="600px" allowfullscreen="true" allowtransparency="true" frameborder="0"></iframe>
+
 {{<                                                               page-break >}}
 
 
