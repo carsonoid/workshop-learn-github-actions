@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2 - Introducing GitHub Actions on Learn GitHub Actions By Deploying this Workshop</title><link>https://learn-github-actions.carson-anderson.com/workshop/2-introduction/</link><description>Recent content in 2 - Introducing GitHub Actions on Learn GitHub Actions By Deploying this Workshop</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://learn-github-actions.carson-anderson.com/workshop/2-introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>1 - Steps</title><link>https://learn-github-actions.carson-anderson.com/workshop/2-introduction/1-steps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop/2-introduction/1-steps/</guid><description>&lt;h1 id="steps">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2 - Introducing GitHub Actions on Learn GitHub Actions By Deploying this Workshop</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/</link><description>Recent content in 2 - Introducing GitHub Actions on Learn GitHub Actions By Deploying this Workshop</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>1 - Steps</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/1-steps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/1-steps/</guid><description>&lt;h1 id="steps">
  Steps
  &lt;a class="anchor" href="#steps">#&lt;/a>
 &lt;/h1>
@@ -19,7 +19,7 @@ Think of steps as analogous to `functions` in code. They are a logical grouping 
  Basic
  &lt;a class="anchor" href="#basic">#&lt;/a>
 &lt;/h3>
-&lt;p>A very basic example of a step might be to fetch the code for the current repo.&lt;/p></description></item><item><title>2 - Jobs</title><link>https://learn-github-actions.carson-anderson.com/workshop/2-introduction/2-jobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop/2-introduction/2-jobs/</guid><description>&lt;h1 id="jobs">
+&lt;p>A very basic example of a step might be to fetch the code for the current repo.&lt;/p></description></item><item><title>2 - Jobs</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/2-jobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/2-jobs/</guid><description>&lt;h1 id="jobs">
  Jobs
  &lt;a class="anchor" href="#jobs">#&lt;/a>
 &lt;/h1>
@@ -41,12 +41,12 @@ Think of steps as analogous to `functions` in code. They are a logical grouping 
 
 
 
-&lt;a href="https://learn-github-actions.carson-anderson.com/workshop/2-introduction/3-workflows" class="book-btn" style="position: absolute; right:0">
+&lt;a href="https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/3-workflows" class="book-btn" style="position: absolute; right:0">
  Next
 &lt;/a>
 
 
-&lt;div class="pagebreak">&lt;/div></description></item><item><title>3 - Workflows</title><link>https://learn-github-actions.carson-anderson.com/workshop/2-introduction/3-workflows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop/2-introduction/3-workflows/</guid><description>&lt;h1 id="workflows">
+&lt;div class="pagebreak">&lt;/div></description></item><item><title>3 - Workflows</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/3-workflows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/3-workflows/</guid><description>&lt;h1 id="workflows">
  Workflows
  &lt;a class="anchor" href="#workflows">#&lt;/a>
 &lt;/h1>
@@ -73,7 +73,7 @@ Think of steps as analogous to `functions` in code. They are a logical grouping 
 
 
 
-&lt;a href="https://learn-github-actions.carson-anderson.com/workshop/3-first-workflow" class="book-btn" style="position: absolute; right:0">
+&lt;a href="https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/3-first-workflow" class="book-btn" style="position: absolute; right:0">
  Next
 &lt;/a>
 

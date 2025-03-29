@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workshop on Learn GitHub Actions By Deploying this Workshop</title><link>https://learn-github-actions.carson-anderson.com/workshop/</link><description>Recent content in Workshop on Learn GitHub Actions By Deploying this Workshop</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://learn-github-actions.carson-anderson.com/workshop/index.xml" rel="self" type="application/rss+xml"/><item><title>Preamble</title><link>https://learn-github-actions.carson-anderson.com/workshop/preamble/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop/preamble/</guid><description>&lt;h1 id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workshop on Learn GitHub Actions By Deploying this Workshop</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/</link><description>Recent content in Workshop on Learn GitHub Actions By Deploying this Workshop</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/index.xml" rel="self" type="application/rss+xml"/><item><title>Preamble</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/preamble/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/preamble/</guid><description>&lt;h1 id="preamble">
  Preamble
  &lt;a class="anchor" href="#preamble">#&lt;/a>
 &lt;/h1>
@@ -70,7 +70,7 @@
  Basic Architecture
  &lt;a class="anchor" href="#basic-architecture">#&lt;/a>
 &lt;/h3>
-&lt;p>TODO: What the heck should go here? Is this about GitHub Actions architecture or the workshop&amp;rsquo;s architecture?&lt;/p></description></item><item><title>1 - Create the Repository</title><link>https://learn-github-actions.carson-anderson.com/workshop/1-create-repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop/1-create-repo/</guid><description>&lt;h1 id="create-the-repository">
+&lt;p>TODO: What the heck should go here? Is this about GitHub Actions architecture or the workshop&amp;rsquo;s architecture?&lt;/p></description></item><item><title>1 - Create the Repository</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/1-create-repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/1-create-repo/</guid><description>&lt;h1 id="create-the-repository">
  Create the Repository
  &lt;a class="anchor" href="#create-the-repository">#&lt;/a>
 &lt;/h1>
@@ -81,11 +81,11 @@ be the repository which will run all the GitHub Actions and Workflows.&lt;/p>
  Instructions
  &lt;a class="anchor" href="#instructions">#&lt;/a>
 &lt;/h2>
-&lt;p>Open up the &lt;a href="https://github.com/new">New Repository Page&lt;/a> and fill it out with these suggested settings:&lt;/p></description></item><item><title>3 - First Workflow</title><link>https://learn-github-actions.carson-anderson.com/workshop/3-first-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop/3-first-workflow/</guid><description>&lt;h1 id="first-workflow">
+&lt;p>Open up the &lt;a href="https://github.com/new">New Repository Page&lt;/a> and fill it out with these suggested settings:&lt;/p></description></item><item><title>3 - First Workflow</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/3-first-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/3-first-workflow/</guid><description>&lt;h1 id="first-workflow">
  First Workflow
  &lt;a class="anchor" href="#first-workflow">#&lt;/a>
 &lt;/h1>
-&lt;p>Once you have the bootstrapped repository and workshop content from the &lt;a href="https://learn-github-actions.carson-anderson.com/workshop/1-create-repo/">Create Repo Page&lt;/a> you are ready
+&lt;p>Once you have the bootstrapped repository and workshop content from the &lt;a href="https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/1-create-repo/">Create Repo Page&lt;/a> you are ready
 to create your first GitHub Actions Workflow!&lt;/p>
 &lt;p>The general overview of this workflow:&lt;/p>
 &lt;ul>
