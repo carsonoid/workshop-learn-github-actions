@@ -1,11 +1,14 @@
 name: CI/CD
 
-on: push
+on:
+ push:
+   branches:
+     - main
+     - init
 
 jobs:
-  build:
-    # if : github.ref == 'refs/heads/main'
-    name: Build
+  build-site:
+    name: Build Site
     runs-on: ubuntu-20.04
     permissions:
       contents: write

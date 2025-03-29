@@ -42,7 +42,7 @@ Everything else can be left unchecked. We will be bootstraping the contents of t
     ```bash
     curl {{< abs-url "workshop-assets.tgz" >}} | tar -zxv
     ```
-    * Alternatively, you can [download the assets]({{< abs-url "workshop-assets.tgz" >}}) then right click in the file explorer and choose "Upload", then run `tar -zxvf workshop-assets.tgz`
+    * Alternatively, you can [click here download the assets]({{< abs-url "workshop-assets.tgz" >}}) then right click in the file explorer and choose "Upload", then run `tar -zxvf workshop-assets.tgz`
 
 {{< page-break                                                               >}}
 
@@ -51,7 +51,7 @@ Everything else can be left unchecked. We will be bootstraping the contents of t
 The default codespace image comes with `hugo` pre-installed, but it does not have some features required by this site, so we need to install the extended edition:
 
 ```bash
-curl -L https://github.com/gohugoio/hugo/releases/download/v0.134.3/hugo_extended_0.134.3_linux-amd64.tar.gz | tar -zxv hugo
+curl -L https://github.com/gohugoio/hugo/releases/download/v0.134.3/hugo_extended_0.145.0_linux-amd64.tar.gz | tar -zxv hugo
 ```
 
 Then run the version we installed:
