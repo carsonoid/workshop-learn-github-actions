@@ -1,0 +1,79 @@
+<!doctype html><html lang=en-us dir=ltr><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
+  Where We are
+  #
+
+By now you should have a new repository and Codespace running, this workspace includes all the assets for this workshop. However, you can&rsquo;t view the workshop without running hugo in your Codespace and accessing a port forward.
+
+  What We Want
+  #
+
+
+A new publically available website for the workshop based on your repo
+Automatic builds of the workshop for commits to ensure that PRs never merge if they break builds
+Automatic publishing changes that have been merged into main to the public website.
+
+
+  What We Don&rsquo;t Want
+  #
+
+
+To have to install anything locally
+To have to have any servers to maintain
+To have to pay anything for our tiny little personal project
+
+
+
+
+
+
+
+  Next
+
+
+
+
+
+
+
+
+  Introducing GitHub Actions
+  #
+
+Thankfully, GitHub Actions can give us everything we need. But before we start writing yaml files
+we need to understand the fundamental building blocks of GitHub Actions."><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://learn-github-actions.carson-anderson.com/workshop/2-introduction/"><meta property="og:site_name" content="Learn GitHub Actions By Deploying this Workshop"><meta property="og:title" content="2 - Introducing GitHub Actions"><meta property="og:description" content="Where We are # By now you should have a new repository and Codespace running, this workspace includes all the assets for this workshop. However, you can’t view the workshop without running hugo in your Codespace and accessing a port forward.
+What We Want # A new publically available website for the workshop based on your repo Automatic builds of the workshop for commits to ensure that PRs never merge if they break builds Automatic publishing changes that have been merged into main to the public website. What We Don’t Want # To have to install anything locally To have to have any servers to maintain To have to pay anything for our tiny little personal project Next Introducing GitHub Actions # Thankfully, GitHub Actions can give us everything we need. But before we start writing yaml files we need to understand the fundamental building blocks of GitHub Actions."><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><title>2 - Introducing GitHub Actions | Learn GitHub Actions By Deploying this Workshop</title>
+<link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=https://learn-github-actions.carson-anderson.com/workshop/2-introduction/><link rel=stylesheet href=/book.min.427088125db4cefb2519ec027d90ee7b7f632ed1c06b876d8672e8d426de9f20.css integrity="sha256-QnCIEl20zvslGewCfZDue39jLtHAa4dthnLo1CbenyA=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.e66867ff23a839cbd4ab995cf6d05f6284f7ed0b7b4436b58f127a2fe07acb5b.js integrity="sha256-5mhn/yOoOcvUq5lc9tBfYoT37Qt7RDa1jxJ6L+B6y1s=" crossorigin=anonymous></script><link rel=alternate type=application/rss+xml href=https://learn-github-actions.carson-anderson.com/workshop/2-introduction/index.xml title="Learn GitHub Actions By Deploying this Workshop"></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Learn GitHub Actions By Deploying this Workshop</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/workshop/>Workshop</a><ul><li><a href=/workshop/preamble/>Preamble</a></li><li><a href=/workshop/1-create-repo/>1 - Create the Repository</a></li><li><a href=/workshop/2-introduction/ class=active>2 - Introducing GitHub Actions</a><ul><li><a href=/workshop/2-introduction/1-steps/>1 - Steps</a></li><li><a href=/workshop/2-introduction/2-jobs/>2 - Jobs</a></li><li><a href=/workshop/2-introduction/3-workflows/>3 - Workflows</a></li></ul></li><li><a href=/workshop/3-first-workflow/>3 - First Workflow</a></li></ul></li><li><span>Bonus GitHub Action Tips</span><ul></ul></li><li><a href=/credits/>Credits</a><ul></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>2 - Introducing GitHub Actions</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#what-we-want>What We Want</a></li><li><a href=#what-we-dont-want>What We Don&rsquo;t Want</a></li></ul><ul><li><a href=#runners>Runners</a></li><li><a href=#steps>Steps</a></li><li><a href=#jobs>Jobs</a></li><li><a href=#workflows>Workflows</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=where-we-are>Where We are
+<a class=anchor href=#where-we-are>#</a></h1><p>By now you should have a new repository and Codespace running, this workspace includes all the assets for this workshop. However, you can&rsquo;t view the workshop without running <code>hugo</code> in your Codespace and accessing a port forward.</p><h2 id=what-we-want>What We Want
+<a class=anchor href=#what-we-want>#</a></h2><ul><li>A new publically available website for the workshop based on your repo</li><li>Automatic builds of the workshop for commits to ensure that PRs never merge if they break builds</li><li>Automatic publishing changes that have been merged into <code>main</code> to the public website.</li></ul><h2 id=what-we-dont-want>What We Don&rsquo;t Want
+<a class=anchor href=#what-we-dont-want>#</a></h2><ul><li>To have to install anything locally</li><li>To have to have any servers to maintain</li><li>To have to pay anything for our tiny little personal project</li></ul><a rel=noopener class="book-btn nextSegment" style=position:absolute;right:0>Next</a><div class=pagebreak></div><h1 id=introducing-github-actions>Introducing GitHub Actions
+<a class=anchor href=#introducing-github-actions>#</a></h1><p>Thankfully, GitHub Actions can give us everything we need. But before we start writing yaml files
+we need to understand the fundamental building blocks of GitHub Actions.</p><blockquote class="book-hint info">The yaml snippets below are simplified to help understand the main building-blocks of GitHub Actions. They will not work if copied directly.</blockquote><iframe src=http://localhost:1313/diagrams/scratch.sozi.html width=100% height=600px allowfullscreen allowtransparency=true frameborder=0></iframe>
+<a rel=noopener class="book-btn prevSegment">Back
+</a><a rel=noopener class="book-btn nextSegment" style=position:absolute;right:0>Next</a><div class=pagebreak></div><h2 id=runners>Runners
+<a class=anchor href=#runners>#</a></h2><a rel=noopener class="book-btn prevSegment">Back
+</a><a rel=noopener class="book-btn nextSegment" style=position:absolute;right:0>Next</a><div class=pagebreak></div><h2 id=steps>Steps
+<a class=anchor href=#steps>#</a></h2><p>Steps are the smallest building blocks of GitHub Actions. They are defined in yaml and can be as simple
+as executing a single command or as complex as running a nested series of steps.</p><p>A simple yaml definition for a &ldquo;Build&rdquo; step might look like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>run</span>: <span style=color:#ae81ff>hugo</span>
+</span></span></code></pre></div><a rel=noopener class="book-btn prevSegment">Back
+</a><a rel=noopener class="book-btn nextSegment" style=position:absolute;right:0>Next</a><div class=pagebreak></div><h2 id=jobs>Jobs
+<a class=anchor href=#jobs>#</a></h2><p>Jobs are collections of one or more steps that should be run in sequence.</p><blockquote><p>All the steps in a job are run on the same host without any automatic cleanup between them. This is fundamentally different from
+many other CI/CD systems</p></blockquote><p>A simple yaml definition for a <code>Build</code> job containing our <code>Build</code> step might look like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-20.04</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>run</span>: <span style=color:#ae81ff>hugo</span>
+</span></span></code></pre></div><p>Notice the <code>Build</code> step from is now nested in the <code>steps</code> list</p><a rel=noopener class="book-btn prevSegment">Back
+</a><a rel=noopener class="book-btn nextSegment" style=position:absolute;right:0>Next</a><div class=pagebreak></div><h2 id=workflows>Workflows
+<a class=anchor href=#workflows>#</a></h2><p>Workflows are collections of one or more jobs that should be potentially executed <strong>using the same trigger conditions</strong>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>CI/CD</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>on</span>: <span style=color:#ae81ff>push</span> <span style=color:#75715e># The trigger conditions</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>jobs</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>build</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-20.04</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>steps</span>:
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: <span style=color:#ae81ff>hugo</span>
+</span></span></code></pre></div><p>Notice the <code>Build</code> job from is now nested in the <code>jobs</code> list</p><a rel=noopener class="book-btn prevSegment">Back
+</a><a href=/workshop/3-first-workflow class=book-btn style=position:absolute;right:0>Next</a><div class=pagebreak></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#what-we-want>What We Want</a></li><li><a href=#what-we-dont-want>What We Don&rsquo;t Want</a></li></ul><ul><li><a href=#runners>Runners</a></li><li><a href=#steps>Steps</a></li><li><a href=#jobs>Jobs</a></li><li><a href=#workflows>Workflows</a></li></ul></nav></div></aside></main><script>for(var parent,style,children,j,childStyle,nextSegments,prevSegment,code=document.querySelectorAll("code.language-bash"),i=0;i<code.length;i++)parent=code[i].parentElement,style=parent.getAttribute("style"),style==null&&(style=""),parent.setAttribute("style",style+";font-size: large;border: 1px solid #404239; filter: drop-shadow(0 0 0.5rem #404239);");for(code=document.querySelectorAll("code.language-txt"),i=0;i<code.length;i++){parent=code[i].parentElement,style=parent.getAttribute("style"),style==null&&(style=""),parent.setAttribute("style",style+";background-color: #f5f5f5; color: #333");for(children=code[i].querySelectorAll("[style]"),j=0;j<children.length;j++)childStyle=children[j].getAttribute("style"),childStyle.indexOf("background-color")>-1&&(console.log("found background-color"),childStyle=childStyle+";background-color: #ddd; color: #333",children[j].setAttribute("style",childStyle))}get_next_heading=function(e){for(var t=e.nextElementSibling;t;){if(t.tagName=="H1"||t.tagName=="H2"||t.tagName=="H3"||t.tagName=="H4"||t.tagName=="H5"||t.tagName=="H6")return t;t=t.nextElementSibling}return null};for(nextSegments=document.getElementsByClassName("nextSegment"),i=0;i<nextSegments.length;i++){let n=nextSegments[i],e=get_next_heading(n);if(e==null)break;n.addEventListener("click",function(){e.scrollIntoView(),e.scrollIntoView(),window.location.hash=e.id});let t=e.innerText;t.endsWith(" #")&&(t=t.substring(0,t.length-2)),n.innerText=n.innerText+" ("+t+")"}for(prevSegment=document.getElementsByClassName("prevSegment"),i=0;i<prevSegment.length;i++)prevSegment[i].addEventListener("click",function(){console.log("clicked");for(var e,t=this.previousElementSibling;t;){if(console.log(t),t.classList.contains("pagebreak"))for(e=t.previousElementSibling;e;){if(e.tagName=="H1"||e.tagName=="H2"||e.tagName=="H3"||e.tagName=="H4"||e.tagName=="H5"||e.tagName=="H6"){e.scrollIntoView(),window.location.hash=e.id;return}e=e.previousElementSibling}t=t.previousElementSibling}})</script></body></html>

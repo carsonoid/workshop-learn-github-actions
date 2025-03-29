@@ -2,6 +2,7 @@
   Preamble
   #
 
+Before you dive into the workshop, there are a few basic things it may help to understand
 
 
 
@@ -20,6 +21,33 @@
   About GitHub Actions
   #
 
+
+  YAML, YAML, and more YAML
+  #
+
+GitHub Actions relies heavily on YAML for defining the work to be done.
+Some basic yaml features that will help you understand the files in this workshop
+a: yaml
+object: uses
+colons: to separate keys and values
+list-descr:
+  - a
+  - yaml
+  - list
+  - uses hypens to separate items
+list-of-objects:
+
+  - a: yaml
+    list: of objects
+
+  - uses: hypens
+    to: start new objects
+
+list-of-objects:
+  - a: yaml
+    list: of objects
+  - uses: hypens
+    to: start new objects
 
 
 
@@ -42,48 +70,40 @@
   Basic Architecture
   #
 
-
-
-
-
-  Back
-
-
-
-
-
-  Next
-
-
-
-
-
-
-
-
-  About Hugo (The generator for this site)
-  #
-
-
-
-
-
-  Back
-
-
-
-
-
-
-
-"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://learn-github-actions.carson-anderson.com/workshop/preamble/"><meta property="og:site_name" content="Learn GitHub Actions By Deploying this Workshop"><meta property="og:title" content="Preamble"><meta property="og:description" content=" Preamble # Next About GitHub Actions # Back Next Basic Architecture # Back Next About Hugo (The generator for this site) # Back "><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="workshop"><title>Preamble | Learn GitHub Actions By Deploying this Workshop</title>
-<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png><link rel=canonical href=https://learn-github-actions.carson-anderson.com/workshop/preamble/><link rel=stylesheet href=/book.min.68b4c4c4262dc0cde0079f6f0e600bb067358f8ee6aec55245f0dae669984fdb.css integrity="sha256-aLTExCYtwM3gB59vDmALsGc1j47mrsVSRfDa5mmYT9s=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.e3b178520ed42235b3e9084d17ca4b06a9cd62c6150536247f281a3de53ce76d.js integrity="sha256-47F4Ug7UIjWz6QhNF8pLBqnNYsYVBTYkfygaPeU8520=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Learn GitHub Actions By Deploying this Workshop</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li><a href=/authors/>Authors</a><ul></ul></li><li><span>Bonus GitHub Action Tips</span><ul></ul></li><li><a href=/workshop/>Workshop</a><ul><li><a href=/workshop/preamble/ class=active>Preamble</a></li><li><a href=/workshop/create-repo/>1 - Create the Repository</a></li><li><a href=/workshop/introduction/>2 - Introducing GitHub Actions</a></li><li><a href=/workshop/first-workflow/>3 - First Workflow</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
-</label><strong>Preamble</strong>
-<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#about-github-actions>About GitHub Actions</a><ul><li><a href=#basic-architecture>Basic Architecture</a></li></ul></li><li><a href=#about-hugo-the-generator-for-this-site>About Hugo (The generator for this site)</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=preamble>Preamble
-<a class=anchor href=#preamble>#</a></h1><a rel=noopener class="book-btn nextSegment" style=position:absolute;right:0>Next</a><div class=pagebreak></div><h2 id=about-github-actions>About GitHub Actions
-<a class=anchor href=#about-github-actions>#</a></h2><a rel=noopener class="book-btn prevSegment">Back
+TODO: What the heck should go here? Is this about GitHub Actions architecture or the workshop&rsquo;s architecture?"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://learn-github-actions.carson-anderson.com/workshop/preamble/"><meta property="og:site_name" content="Learn GitHub Actions By Deploying this Workshop"><meta property="og:title" content="Preamble"><meta property="og:description" content="Preamble # Before you dive into the workshop, there are a few basic things it may help to understand
+Next About GitHub Actions # YAML, YAML, and more YAML # GitHub Actions relies heavily on YAML for defining the work to be done.
+Some basic yaml features that will help you understand the files in this workshop
+a: yaml object: uses colons: to separate keys and values list-descr: - a - yaml - list - uses hypens to separate items list-of-objects: - a: yaml list: of objects - uses: hypens to: start new objects list-of-objects: - a: yaml list: of objects - uses: hypens to: start new objects Back Next Basic Architecture # TODO: What the heck should go here? Is this about GitHub Actions architecture or the workshop’s architecture?"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="workshop"><title>Preamble | Learn GitHub Actions By Deploying this Workshop</title>
+<link rel=icon href=/favicon.png><link rel=manifest href=/manifest.json><link rel=canonical href=https://learn-github-actions.carson-anderson.com/workshop/preamble/><link rel=stylesheet href=/book.min.427088125db4cefb2519ec027d90ee7b7f632ed1c06b876d8672e8d426de9f20.css integrity="sha256-QnCIEl20zvslGewCfZDue39jLtHAa4dthnLo1CbenyA=" crossorigin=anonymous><script defer src=/fuse.min.js></script><script defer src=/en.search.min.e66867ff23a839cbd4ab995cf6d05f6284f7ed0b7b4436b58f127a2fe07acb5b.js integrity="sha256-5mhn/yOoOcvUq5lc9tBfYoT37Qt7RDa1jxJ6L+B6y1s=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><span>Learn GitHub Actions By Deploying this Workshop</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=/workshop/>Workshop</a><ul><li><a href=/workshop/preamble/ class=active>Preamble</a></li><li><a href=/workshop/1-create-repo/>1 - Create the Repository</a></li><li><a href=/workshop/2-introduction/>2 - Introducing GitHub Actions</a><ul><li><a href=/workshop/2-introduction/1-steps/>1 - Steps</a></li><li><a href=/workshop/2-introduction/2-jobs/>2 - Jobs</a></li><li><a href=/workshop/2-introduction/3-workflows/>3 - Workflows</a></li></ul></li><li><a href=/workshop/3-first-workflow/>3 - First Workflow</a></li></ul></li><li><span>Bonus GitHub Action Tips</span><ul></ul></li><li><a href=/credits/>Credits</a><ul></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label><h3>Preamble</h3><label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#about-github-actions>About GitHub Actions</a><ul><li><a href=#yaml-yaml-and-more-yaml>YAML, YAML, and more YAML</a></li><li><a href=#basic-architecture>Basic Architecture</a></li></ul></li><li><a href=#about-hugo---the-generator-for-this-site>About Hugo - The generator for this site</a></li></ul></nav></aside></header><article class="markdown book-article"><h1 id=preamble>Preamble
+<a class=anchor href=#preamble>#</a></h1><p>Before you dive into the workshop, there are a few basic things it may help to understand</p><a rel=noopener class="book-btn nextSegment" style=position:absolute;right:0>Next</a><div class=pagebreak></div><h2 id=about-github-actions>About GitHub Actions
+<a class=anchor href=#about-github-actions>#</a></h2><h3 id=yaml-yaml-and-more-yaml>YAML, YAML, and more YAML
+<a class=anchor href=#yaml-yaml-and-more-yaml>#</a></h3><p>GitHub Actions relies heavily on YAML for defining the work to be done.</p><p>Some basic yaml features that will help you understand the files in this workshop</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>a</span>: <span style=color:#ae81ff>yaml</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>object</span>: <span style=color:#ae81ff>uses</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>colons</span>: <span style=color:#ae81ff>to separate keys and values</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>list-descr</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>a</span>
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>yaml</span>
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>list</span>
+</span></span><span style=display:flex><span>  - <span style=color:#ae81ff>uses hypens to separate items</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#f92672>list-of-objects</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>a</span>: <span style=color:#ae81ff>yaml</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>list</span>: <span style=color:#ae81ff>of objects</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>hypens</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>to</span>: <span style=color:#ae81ff>start new objects</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>list-of-objects</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>a</span>: <span style=color:#ae81ff>yaml</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>list</span>: <span style=color:#ae81ff>of objects</span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>hypens</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>to</span>: <span style=color:#ae81ff>start new objects</span>
+</span></span></code></pre></div><a rel=noopener class="book-btn prevSegment">Back
 </a><a rel=noopener class="book-btn nextSegment" style=position:absolute;right:0>Next</a><div class=pagebreak></div><h3 id=basic-architecture>Basic Architecture
-<a class=anchor href=#basic-architecture>#</a></h3><a rel=noopener class="book-btn prevSegment">Back
-</a><a rel=noopener class="book-btn nextSegment" style=position:absolute;right:0>Next</a><div class=pagebreak></div><h2 id=about-hugo-the-generator-for-this-site>About Hugo (The generator for this site)
-<a class=anchor href=#about-hugo-the-generator-for-this-site>#</a></h2><a rel=noopener class="book-btn prevSegment">Back</a><div class=pagebreak></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#about-github-actions>About GitHub Actions</a><ul><li><a href=#basic-architecture>Basic Architecture</a></li></ul></li><li><a href=#about-hugo-the-generator-for-this-site>About Hugo (The generator for this site)</a></li></ul></nav></div></aside></main><script>for(var parent,style,children,j,childStyle,nextSegments,prevSegment,code=document.querySelectorAll("code.language-bash"),i=0;i<code.length;i++)parent=code[i].parentElement,style=parent.getAttribute("style"),style==null&&(style=""),parent.setAttribute("style",style+";font-size: large;border: 1px solid #404239; filter: drop-shadow(0 0 0.5rem #404239);");for(code=document.querySelectorAll("code.language-txt"),i=0;i<code.length;i++){parent=code[i].parentElement,style=parent.getAttribute("style"),style==null&&(style=""),parent.setAttribute("style",style+";background-color: #f5f5f5; color: #333");for(children=code[i].querySelectorAll("[style]"),j=0;j<children.length;j++)childStyle=children[j].getAttribute("style"),childStyle.indexOf("background-color")>-1&&(console.log("found background-color"),childStyle=childStyle+";background-color: #ddd; color: #333",children[j].setAttribute("style",childStyle))}get_next_heading=function(e){for(var t=e.nextElementSibling;t;){if(t.tagName=="H1"||t.tagName=="H2"||t.tagName=="H3"||t.tagName=="H4"||t.tagName=="H5"||t.tagName=="H6")return t;t=t.nextElementSibling}return null};for(nextSegments=document.getElementsByClassName("nextSegment"),i=0;i<nextSegments.length;i++){let n=nextSegments[i],e=get_next_heading(n);if(e==null)break;n.addEventListener("click",function(){e.scrollIntoView(),e.scrollIntoView(),window.location.hash=e.id});let t=e.innerText;t.endsWith(" #")&&(t=t.substring(0,t.length-2)),n.innerText=n.innerText+" ("+t+")"}for(prevSegment=document.getElementsByClassName("prevSegment"),i=0;i<prevSegment.length;i++)prevSegment[i].addEventListener("click",function(){console.log("clicked");for(var e,t=this.previousElementSibling;t;){if(console.log(t),t.classList.contains("pagebreak"))for(e=t.previousElementSibling;e;){if(e.tagName=="H1"||e.tagName=="H2"||e.tagName=="H3"||e.tagName=="H4"||e.tagName=="H5"||e.tagName=="H6"){e.scrollIntoView(),window.location.hash=e.id;return}e=e.previousElementSibling}t=t.previousElementSibling}})</script></body></html>
+<a class=anchor href=#basic-architecture>#</a></h3><p>TODO: What the heck should go here? Is this about GitHub Actions architecture or the workshop&rsquo;s architecture?</p><p>I think a graphic showing the architecture of what we are building would be useful. Main things to diagram:</p><ol><li>A source repo for the workshop</li><li>GitHub Codespaces</li><li>GitHub Actions (no workflows, jobs, or steps yet)</li><li>GitHub Pages</li><li>Someone loading the resulting page from the publish workflow</li></ol><a rel=noopener class="book-btn prevSegment">Back
+</a><a rel=noopener class="book-btn nextSegment" style=position:absolute;right:0>Next</a><div class=pagebreak></div><h2 id=about-hugo---the-generator-for-this-site>About Hugo - The generator for this site
+<a class=anchor href=#about-hugo---the-generator-for-this-site>#</a></h2><p>GitHub Actions (our CICD) and GitHub Pages (our hosting platorm) don&rsquo;t require you to use any particular language or tool.
+But this specific workshop is built on the wonderful, open-source <a href=https://gohugo.io/>Hugo</a> static site generator and the
+<a href=https://github.com/alex-shpak/hugo-book>hugo-book theme</a>.</p><p>You will not need to install hugo locally, it actually comes bundled into Codespaces</p><a rel=noopener class="book-btn prevSegment">Back
+</a><a href=/workshop/1-create-repo/ class=book-btn style=position:absolute;right:0>Next</a><div class=pagebreak></div></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#about-github-actions>About GitHub Actions</a><ul><li><a href=#yaml-yaml-and-more-yaml>YAML, YAML, and more YAML</a></li><li><a href=#basic-architecture>Basic Architecture</a></li></ul></li><li><a href=#about-hugo---the-generator-for-this-site>About Hugo - The generator for this site</a></li></ul></nav></div></aside></main><script>for(var parent,style,children,j,childStyle,nextSegments,prevSegment,code=document.querySelectorAll("code.language-bash"),i=0;i<code.length;i++)parent=code[i].parentElement,style=parent.getAttribute("style"),style==null&&(style=""),parent.setAttribute("style",style+";font-size: large;border: 1px solid #404239; filter: drop-shadow(0 0 0.5rem #404239);");for(code=document.querySelectorAll("code.language-txt"),i=0;i<code.length;i++){parent=code[i].parentElement,style=parent.getAttribute("style"),style==null&&(style=""),parent.setAttribute("style",style+";background-color: #f5f5f5; color: #333");for(children=code[i].querySelectorAll("[style]"),j=0;j<children.length;j++)childStyle=children[j].getAttribute("style"),childStyle.indexOf("background-color")>-1&&(console.log("found background-color"),childStyle=childStyle+";background-color: #ddd; color: #333",children[j].setAttribute("style",childStyle))}get_next_heading=function(e){for(var t=e.nextElementSibling;t;){if(t.tagName=="H1"||t.tagName=="H2"||t.tagName=="H3"||t.tagName=="H4"||t.tagName=="H5"||t.tagName=="H6")return t;t=t.nextElementSibling}return null};for(nextSegments=document.getElementsByClassName("nextSegment"),i=0;i<nextSegments.length;i++){let n=nextSegments[i],e=get_next_heading(n);if(e==null)break;n.addEventListener("click",function(){e.scrollIntoView(),e.scrollIntoView(),window.location.hash=e.id});let t=e.innerText;t.endsWith(" #")&&(t=t.substring(0,t.length-2)),n.innerText=n.innerText+" ("+t+")"}for(prevSegment=document.getElementsByClassName("prevSegment"),i=0;i<prevSegment.length;i++)prevSegment[i].addEventListener("click",function(){console.log("clicked");for(var e,t=this.previousElementSibling;t;){if(console.log(t),t.classList.contains("pagebreak"))for(e=t.previousElementSibling;e;){if(e.tagName=="H1"||e.tagName=="H2"||e.tagName=="H3"||e.tagName=="H4"||e.tagName=="H5"||e.tagName=="H6"){e.scrollIntoView(),window.location.hash=e.id;return}e=e.previousElementSibling}t=t.previousElementSibling}})</script></body></html>
