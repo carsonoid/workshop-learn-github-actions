@@ -1,4 +1,4 @@
-baseURL = 'https://learn-github-actions.carson-anderson.com/'
+baseURL = 'https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/'
 languageCode = 'en-us'
 title = 'Learn GitHub Actions By Deploying this Workshop'
 theme = 'hugo-book'
