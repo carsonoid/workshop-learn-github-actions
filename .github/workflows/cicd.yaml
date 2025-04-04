@@ -51,6 +51,8 @@ jobs:
 
       - name: Print Info
         uses: ./.github/actions/info
+        with:
+          fields: ref,pusher
 
       - name: Build
         uses: ./.github/actions/build

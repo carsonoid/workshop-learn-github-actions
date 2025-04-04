@@ -2,7 +2,7 @@ name: 'Info'
 description: 'Print Build Info Using Javascript'
 inputs:
   fields:
-    description: 'Root fields in the context payload to print out. Comma separated'
+    description: 'Fields in the context payload to print out. Comma separated. Empty prints entire payload'
     required: false
 outputs:
   time:
