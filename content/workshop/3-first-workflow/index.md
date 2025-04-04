@@ -284,4 +284,5 @@ the status of the jobs. It can be found under the `Actions` tab on the repositor
 GitHub page.
 
 ![actions page](actions-page.png)
-{{< page-break last="true"                                                >}}
+
+{{< page-break last="true"                nextRef="/workshop/4-actions"                                 >}}

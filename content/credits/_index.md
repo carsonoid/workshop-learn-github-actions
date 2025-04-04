@@ -5,15 +5,16 @@ bookCollapseSection: false
 
 # Credits
 
-A big thank you to everyone who has contributed to the enhancement and proilferation of this workshop and the ecosystem
+A big thank you to everyone who has contributed to the enhancement and proliferation of this workshop and the ecosystem
 that supports it.
 
-## Art
+## Artist
 
-TODO: This is where credit for Debbie goes. It should have a link to contact her and information about the art
-that is included in the workshop and why it is here.
+**Debbi Humrich**
 
-## Site
+If you like the artwork and would like to commission your own you can contact Debbie at TODO
+
+## Site Credits
 
 * [GitHub Actions](https://docs.github.com/en/actions)
 * [Hugo](https://gohugo.io/)

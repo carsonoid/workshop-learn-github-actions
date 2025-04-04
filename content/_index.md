@@ -12,14 +12,11 @@ All of the artwork in this workshop is human generated. For more information on 
 
 {{< hint warning >}}
 ⚠️ Look for the buttons! ⚠️
-<br />
-<br />
+<br /><br />
 While browsable for later reference, this site and every page on the workshop is designed to be viewable as a linear experience.
-<br />
-<br />
+<br /><br />
 If you are ever not sure what to do next, just look for the blue buttons at the bottom of the page. Just
 like the one just below this notice. 👇
 {{< /hint >}}
-
 
 {{< page-break first="true" nextRef="workshop" title="Start The Workshop">}}
