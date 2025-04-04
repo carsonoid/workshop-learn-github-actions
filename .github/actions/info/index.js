@@ -23,6 +23,7 @@ try {
   const config = fs.readFileSync('./config.toml', 'utf-8');
   const parsed = toml.parse(config);
   core.summary.addHeading("Building "+parsed.baseURL, 2);
+  core.summary.write();
 
   const time = (new Date()).toTimeString();
 
