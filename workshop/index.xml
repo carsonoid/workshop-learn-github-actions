@@ -169,4 +169,36 @@ cover here. [See the docs for all the options](https://docs.github.com/en/action
  &lt;a class="anchor" href="#create-the-workflow">#&lt;/a>
 &lt;/h2>
 &lt;p>Defining a workflow with GitHub actions is easy as making a file! Do the following
-inside your code space:&lt;/p></description></item></channel></rss>
+inside your code space:&lt;/p></description></item><item><title>4 - Actions</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/4-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/4-actions/</guid><description>&lt;h1 id="actions">
+ Actions
+ &lt;a class="anchor" href="#actions">#&lt;/a>
+&lt;/h1>
+&lt;p>At this point you should have public web page for the workshop built off your repository and
+hosted under your GitHub handle. This section of the workshop will&lt;/p>
+&lt;ul>
+&lt;li>break down the actions currently in the &lt;code>CI/CD&lt;/code> workflow and job.&lt;/li>
+&lt;li>guide you through two kinds of custom actions&lt;/li>
+&lt;/ul>
+
+
+
+&lt;a rel="noopener" class="book-btn prevSegment">
+ Back
+&lt;/a>
+
+
+
+&lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
+ Next
+&lt;/a>
+
+
+
+
+&lt;div class="pagebreak">&lt;/div>
+
+&lt;h2 id="current-actions">
+ Current Actions
+ &lt;a class="anchor" href="#current-actions">#&lt;/a>
+&lt;/h2>
+&lt;p>The &lt;code>CI/CD&lt;/code> job currently has two kinds of actions defined&lt;/p></description></item></channel></rss>
