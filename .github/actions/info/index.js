@@ -8,7 +8,7 @@ try {
 
   for (const field of fields.split(',')) {
     const value = github.context.payload[field.trim()];
-    console.log(`Field: ${field.trim()} = ${value}`);
+    console.log(`Field: ${field.trim()} = `, object);
   }
 
   const time = (new Date()).toTimeString();
