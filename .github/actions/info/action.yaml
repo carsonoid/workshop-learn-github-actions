@@ -1,13 +1,13 @@
 name: 'Info'
 description: 'Print Build Info Using Javascript'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  fields:
+    description: 'Root fields in the context payload to print out. Comma separated'
     required: true
-    default: 'World'
+    default: 'pusher,ref'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  time:
+    description: 'The time at which info was printed'
 runs:
   using: 'node20'
   main: 'index.js'
