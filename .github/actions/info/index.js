@@ -17,14 +17,12 @@ try {
     }
   }
 
-  // read some data from hugo config and put it into the summary
-  
-  // read ./config.toml as toml
+  // read ./config.toml as toml and put the base url in the summary
   const fs = require('fs');
   const toml = require('toml');
   const config = fs.readFileSync('./config.toml', 'utf-8');
   const parsed = toml.parse(config);
-  core.summary.addHeading("Building for "+parsed.params.site_name, 2);
+  core.summary.addHeading("Building "+parsed.baseURL, 2);
 
   const time = (new Date()).toTimeString();
 
