@@ -10,9 +10,10 @@ try {
     console.log("Payload");
     console.log(payload);
   } else {
+    console.log("Payload fields:");
     for (const field of fields.split(',')) {
       const value = github.context.payload[field.trim()];
-      console.log(`Field: ${field.trim()} = `, object);
+      console.log(`Field: ${field.trim()} = `, value);
     }
   }
 
