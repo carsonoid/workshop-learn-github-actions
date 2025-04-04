@@ -17,7 +17,17 @@ try {
     }
   }
 
+  // read some data from hugo config and put it into the summary
+  
+  // read ./config.toml as toml
+  const fs = require('fs');
+  const toml = require('toml');
+  const config = fs.readFileSync('./config.toml', 'utf-8');
+  const parsed = toml.parse(config);
+  core.summary.addHeading("Building for "+parsed.params.site_name, 2);
+
   const time = (new Date()).toTimeString();
+
   core.setOutput("time", time);
 } catch (error) {
   core.setFailed(error.message);

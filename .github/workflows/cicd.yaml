@@ -50,6 +50,7 @@ jobs:
           fetch-depth: 0
 
       - name: Print Info
+        id: info
         uses: ./.github/actions/info
         with:
           fields: ref,pusher
