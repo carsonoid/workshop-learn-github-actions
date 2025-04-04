@@ -13,7 +13,7 @@
 {{ end }}
 
 {{ with .Get "nextRef" }}
-<a href="{{. | urlize}}" class="book-btn" style="position: absolute; right:0">
+<a href="{{ . | absURL}}" class="book-btn" style="position: absolute; right:0">
   {{ $title | default "Next" }}
 </a>
 {{ end }}

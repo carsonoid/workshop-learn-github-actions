@@ -58,4 +58,4 @@ with an idle codespace. If you do not manually stop, the codespace will timout a
 manually exit a space. See the [Billing Documentation](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces) for more information
 on the free tier or added costs.
 
-{{< page-break nextRef="preamble">}}
+{{< page-break nextRef="workshop/preamble">}}
