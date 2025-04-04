@@ -25,12 +25,12 @@ try {
   core.summary.addHeading(`Built "${parsed.title}"`, 3);
 
   if(fields) {
-    let rows = [{data: "Field", header: true}, {data: "Value", header: true}];
+    let rows = [[{data: "Field", header: true}, {data: "Value", header: true}]];
     for (const field of fields.split(',')) {
-      rows.push(
+      rows.push([
         {data: field.trim(), header: false},
         {data: github.context.payload[field.trim()], header: false},
-      );
+      ]);
     }
     core.summary.addTable(rows);
   }
