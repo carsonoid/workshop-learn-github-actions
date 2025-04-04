@@ -13,6 +13,8 @@ weight: 1
 
 ## What you do **not** need
 
+While you might normally use the following tools, the workshop is designed to not require them.
+
 * A git client installed on your machine
   * We will be using GitHub to do git operations
   * You can use a git client and clone the repository to your local machine if you prefer

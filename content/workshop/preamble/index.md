@@ -51,24 +51,23 @@ list-of-objects:
 
 ### Basic Architecture
 
-TODO: What the heck should go here? Is this about GitHub Actions architecture or the workshop's architecture?
+- A repository On Github
+- GitHub Codespaces to edit code
+- GitHub Actions for CICD
+  - GitHub hosted runners
+- Github Pages for web hosting
 
-I think a graphic showing the architecture of what we are building would be useful. Main things to diagram:
-
-1. A source repo for the workshop
-2. GitHub Codespaces
-3. GitHub Actions (no workflows, jobs, or steps yet)
-4. GitHub Pages
-5. Someone loading the resulting page from the publish workflow
+{{< figure src="/diagrams/arch/arch.png" width="100%" class="text-center">}}
 
 {{<                                                               page-break >}}
 
 ## About Hugo - The generator for this site
 
+{{< figure src="/hugo-logo-512x512.png" width="50%" class="text-center">}}
+
+
 GitHub Actions (our CICD) and GitHub Pages (our hosting platorm) don't require you to use any particular language or tool.
 But this specific workshop is built on the wonderful, open-source [Hugo](https://gohugo.io/) static site generator and the
 [hugo-book theme](https://github.com/alex-shpak/hugo-book).
-
-You will not need to install hugo locally, it actually comes bundled into Codespaces
 
 {{<                                                               page-break last="true" nextRef="/workshop/1-create-repo/" >}}
