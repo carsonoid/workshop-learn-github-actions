@@ -49,6 +49,9 @@ jobs:
           submodules: true
           fetch-depth: 0
 
+      - name: Print Info
+        uses: ./.github/actions/info
+
       - name: Build
         uses: ./.github/actions/build
 
