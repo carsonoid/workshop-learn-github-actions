@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on Learn GitHub Actions By Deploying this Workshop</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/</link><description>Recent content in Introduction on Learn GitHub Actions By Deploying this Workshop</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/index.xml" rel="self" type="application/rss+xml"/><item><title>Preamble</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/preamble/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/preamble/</guid><description>&lt;h1 id="preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Introduction on Learn GitHub Actions</title><link>https://carsonoid.github.io/workshop-learn-github-actions/</link><description>Recent content in Introduction on Learn GitHub Actions</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://carsonoid.github.io/workshop-learn-github-actions/index.xml" rel="self" type="application/rss+xml"/><item><title>Preamble</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/preamble/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/preamble/</guid><description>&lt;h1 id="preamble">
  Preamble
  &lt;a class="anchor" href="#preamble">#&lt;/a>
 &lt;/h1>
@@ -70,7 +70,7 @@
  Basic Architecture
  &lt;a class="anchor" href="#basic-architecture">#&lt;/a>
 &lt;/h3>
-&lt;p>TODO: What the heck should go here? Is this about GitHub Actions architecture or the workshop&amp;rsquo;s architecture?&lt;/p></description></item><item><title>1 - Create the Repository</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/1-create-repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/1-create-repo/</guid><description>&lt;h1 id="create-the-repository">
+&lt;p>TODO: What the heck should go here? Is this about GitHub Actions architecture or the workshop&amp;rsquo;s architecture?&lt;/p></description></item><item><title>1 - Create the Repository</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/</guid><description>&lt;h1 id="create-the-repository">
  Create the Repository
  &lt;a class="anchor" href="#create-the-repository">#&lt;/a>
 &lt;/h1>
@@ -81,7 +81,7 @@ be the repository which will run all the GitHub Actions and Workflows.&lt;/p>
  Instructions
  &lt;a class="anchor" href="#instructions">#&lt;/a>
 &lt;/h2>
-&lt;p>Open up the &lt;a href="https://github.com/new">New Repository Page&lt;/a> and fill it out with these suggested settings:&lt;/p></description></item><item><title>1 - Steps</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/1-steps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/1-steps/</guid><description>&lt;h1 id="steps">
+&lt;p>Open up the &lt;a href="https://github.com/new">New Repository Page&lt;/a> and fill it out with these suggested settings:&lt;/p></description></item><item><title>1 - Steps</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/1-steps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/1-steps/</guid><description>&lt;h1 id="steps">
  Steps
  &lt;a class="anchor" href="#steps">#&lt;/a>
 &lt;/h1>
@@ -102,7 +102,7 @@ Think of steps as analogous to `functions` in code. They are a logical grouping 
  Basic
  &lt;a class="anchor" href="#basic">#&lt;/a>
 &lt;/h3>
-&lt;p>A very basic example of a step might be to fetch the code for the current repo.&lt;/p></description></item><item><title>2 - Jobs</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/2-jobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/2-jobs/</guid><description>&lt;h1 id="jobs">
+&lt;p>A very basic example of a step might be to fetch the code for the current repo.&lt;/p></description></item><item><title>2 - Jobs</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/2-jobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/2-jobs/</guid><description>&lt;h1 id="jobs">
  Jobs
  &lt;a class="anchor" href="#jobs">#&lt;/a>
 &lt;/h1>
@@ -124,16 +124,16 @@ Think of steps as analogous to `functions` in code. They are a logical grouping 
 
 
 
-&lt;a href="https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/3-workflows" class="book-btn" style="position: absolute; right:0">
+&lt;a href="https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/3-workflows" class="book-btn" style="position: absolute; right:0">
  Next
 &lt;/a>
 
 
-&lt;div class="pagebreak">&lt;/div></description></item><item><title>3 - First Workflow</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/3-first-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/3-first-workflow/</guid><description>&lt;h1 id="first-workflow">
+&lt;div class="pagebreak">&lt;/div></description></item><item><title>3 - First Workflow</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/3-first-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/3-first-workflow/</guid><description>&lt;h1 id="first-workflow">
  First Workflow
  &lt;a class="anchor" href="#first-workflow">#&lt;/a>
 &lt;/h1>
-&lt;p>Once you have the bootstrapped repository and workshop content from the &lt;a href="https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/1-create-repo/">Create Repo Page&lt;/a> you are ready
+&lt;p>Once you have the bootstrapped repository and workshop content from the &lt;a href="https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/">Create Repo Page&lt;/a> you are ready
 to create your first GitHub Actions Workflow!&lt;/p>
 &lt;p>The general overview of this workflow:&lt;/p>
 &lt;ul>
@@ -177,7 +177,7 @@ cover here. [See the docs for all the options](https://docs.github.com/en/action
  &lt;a class="anchor" href="#create-the-workflow">#&lt;/a>
 &lt;/h2>
 &lt;p>Defining a workflow with GitHub actions is easy as making a file! Do the following
-inside your code space:&lt;/p></description></item><item><title>3 - Workflows</title><link>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/3-workflows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/2-introduction/3-workflows/</guid><description>&lt;h1 id="workflows">
+inside your code space:&lt;/p></description></item><item><title>3 - Workflows</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/3-workflows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/3-workflows/</guid><description>&lt;h1 id="workflows">
  Workflows
  &lt;a class="anchor" href="#workflows">#&lt;/a>
 &lt;/h1>
@@ -204,7 +204,7 @@ inside your code space:&lt;/p></description></item><item><title>3 - Workflows</t
 
 
 
-&lt;a href="https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/workshop/3-first-workflow" class="book-btn" style="position: absolute; right:0">
+&lt;a href="https://carsonoid.github.io/workshop-learn-github-actions/workshop/3-first-workflow" class="book-btn" style="position: absolute; right:0">
  Next
 &lt;/a>
 

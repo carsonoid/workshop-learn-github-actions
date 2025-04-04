@@ -1,6 +1,6 @@
 {
-  "name": "Learn GitHub Actions By Deploying this Workshop",
-  "short_name": "Learn GitHub Actions By Deploying this Workshop",
+  "name": "Learn GitHub Actions",
+  "short_name": "Learn GitHub Actions",
   "start_url": "/workshop-learn-github-actions/",
   "scope": "/workshop-learn-github-actions/",
   "display": "standalone",
