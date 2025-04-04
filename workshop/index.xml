@@ -70,7 +70,47 @@
  Basic Architecture
  &lt;a class="anchor" href="#basic-architecture">#&lt;/a>
 &lt;/h3>
-&lt;p>TODO: What the heck should go here? Is this about GitHub Actions architecture or the workshop&amp;rsquo;s architecture?&lt;/p></description></item><item><title>1 - Create the Repository</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/</guid><description>&lt;h1 id="create-the-repository">
+&lt;ul>
+&lt;li>A repository On Github&lt;/li>
+&lt;li>GitHub Codespaces to edit code&lt;/li>
+&lt;li>GitHub Actions for CICD
+&lt;ul>
+&lt;li>GitHub hosted runners&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Github Pages for web hosting&lt;/li>
+&lt;/ul>
+&lt;figure class="text-center">&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/diagrams/arch/arch.png" width="100%">
+&lt;/figure>
+
+
+
+
+&lt;a rel="noopener" class="book-btn prevSegment">
+ Back
+&lt;/a>
+
+
+
+&lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
+ Next
+&lt;/a>
+
+
+
+
+&lt;div class="pagebreak">&lt;/div>
+
+&lt;h2 id="about-hugo---the-generator-for-this-site">
+ About Hugo - The generator for this site
+ &lt;a class="anchor" href="#about-hugo---the-generator-for-this-site">#&lt;/a>
+&lt;/h2>
+&lt;figure class="text-center">&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/hugo-logo-512x512.png" width="50%">
+&lt;/figure>
+
+&lt;p>GitHub Actions (our CICD) and GitHub Pages (our hosting platorm) don&amp;rsquo;t require you to use any particular language or tool.
+But this specific workshop is built on the wonderful, open-source &lt;a href="https://gohugo.io/">Hugo&lt;/a> static site generator and the
+&lt;a href="https://github.com/alex-shpak/hugo-book">hugo-book theme&lt;/a>.&lt;/p></description></item><item><title>1 - Create the Repository</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/</guid><description>&lt;h1 id="create-the-repository">
  Create the Repository
  &lt;a class="anchor" href="#create-the-repository">#&lt;/a>
 &lt;/h1>
