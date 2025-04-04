@@ -1,5 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
+const fs = require('fs');
+const toml = require('toml');
 
 try {
   // Get the JSON webhook payload for the event that triggered the workflow
@@ -18,11 +20,9 @@ try {
   }
 
   // read ./config.toml as toml and put the base url in the summary
-  const fs = require('fs');
-  const toml = require('toml');
   const config = fs.readFileSync('./config.toml', 'utf-8');
   const parsed = toml.parse(config);
-  core.summary.addHeading("Building "+parsed.baseURL, 2);
+  core.summary.addHeading(`"Built "${parsed.title}"`, 3);
   core.summary.write();
 
   const time = (new Date()).toTimeString();
