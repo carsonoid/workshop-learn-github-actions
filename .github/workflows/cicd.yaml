@@ -26,7 +26,10 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify
+        run: |
+          # there is no built-in env variable for the repo name without owner, so we have to parse it out
+          REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
+          hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

@@ -1,6 +1,6 @@
-baseURL = 'https://learn-github-actions.carson-anderson.com/workshop-learn-github-actions/'
+baseURL = 'http://localhost'
 languageCode = 'en-us'
-title = 'Learn GitHub Actions By Deploying this Workshop'
+title = 'Learn GitHub Actions'
 theme = 'hugo-book'
 
 # Book configuration

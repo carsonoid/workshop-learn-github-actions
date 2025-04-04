@@ -259,5 +259,15 @@ jobs:
 
 ```
 
+{{< page-break                                                               >}}
+
+## Now run it!
+
+```shell
+git checkout -b init
+git add .
+git commit -m "feat: initial add"
+git push -u origin HEAD
+```
 
 {{< page-break last="true"                                                >}}
