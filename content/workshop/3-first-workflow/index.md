@@ -263,6 +263,9 @@ jobs:
 
 ## Now run it!
 
+Because our workflow is set up to trigger on `push` all we have to do to kick it off
+is to simply create a new commit and `push` it to GitHub.
+
 ```shell
 git checkout -b init
 git add .
@@ -270,4 +273,15 @@ git commit -m "feat: initial add"
 git push -u origin HEAD
 ```
 
+Ok... now what? We pushed the update but how do we know if it is working?
+
+{{< page-break                                                               >}}
+
+## Watching a workflow
+
+Luckily, GitHub provides a very useful UI to help us track workflows and check
+the status of the jobs. It can be found under the `Actions` tab on the repository's
+GitHub page.
+
+![actions page](actions-page.png)
 {{< page-break last="true"                                                >}}
