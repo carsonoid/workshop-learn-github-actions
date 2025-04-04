@@ -50,7 +50,7 @@ jobs:
           fetch-depth: 0
 
       - name: Build
-        uses: ./actions/build
+        uses: ./.github/actions/build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
