@@ -29,7 +29,7 @@ try {
     for (const field of fields.split(',')) {
       rows.push([
         {data: field.trim(), header: false},
-        {data: github.context.payload[field.trim()], header: false},
+        {data: JSON.stringify(github.context.payload[field.trim()]), header: false},
       ]);
     }
     core.summary.addTable(rows);
