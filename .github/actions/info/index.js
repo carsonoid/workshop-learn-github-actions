@@ -22,7 +22,18 @@ try {
   // read ./config.toml as toml and put the base url in the summary
   const config = fs.readFileSync('./config.toml', 'utf-8');
   const parsed = toml.parse(config);
-  core.summary.addHeading(`"Built "${parsed.title}"`, 3);
+  core.summary.addHeading(`Built "${parsed.title}"`, 3);
+
+  if(fields) {
+    let rows = [{data: "Field", header: true}, {data: "Value", header: true}];
+    for (const field of fields.split(',')) {
+      rows.push(
+        {data: field.trim(), header: false},
+        {data: github.context.payload[field.trim()], header: false},
+      );
+    }
+    core.summary.addTable(rows);
+  }
   core.summary.write();
 
   const time = (new Date()).toTimeString();
