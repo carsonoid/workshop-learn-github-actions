@@ -3,8 +3,7 @@ description: 'Print Build Info Using Javascript'
 inputs:
   fields:
     description: 'Root fields in the context payload to print out. Comma separated'
-    required: true
-    default: 'pusher,ref'
+    required: false
 outputs:
   time:
     description: 'The time at which info was printed'

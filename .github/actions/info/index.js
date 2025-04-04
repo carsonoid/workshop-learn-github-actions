@@ -6,9 +6,14 @@ try {
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   const fields = core.getInput('fields');
 
-  for (const field of fields.split(',')) {
-    const value = github.context.payload[field.trim()];
-    console.log(`Field: ${field.trim()} = `, object);
+  if (!fields) {
+    console.log("Payload");
+    console.log(payload);
+  } else {
+    for (const field of fields.split(',')) {
+      const value = github.context.payload[field.trim()];
+      console.log(`Field: ${field.trim()} = `, object);
+    }
   }
 
   const time = (new Date()).toTimeString();
