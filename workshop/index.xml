@@ -2,30 +2,58 @@
  Preamble
  &lt;a class="anchor" href="#preamble">#&lt;/a>
 &lt;/h1>
-&lt;p>Before you dive into the workshop, there are a few basic things it may help to understand&lt;/p>
+&lt;div class="slide">
+ &lt;div class="slide-nav">
+ 
 
+ 
 
+ 
 
-
-
-&lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
+ 
+ &lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
  Next
-&lt;/a>
+ &lt;/a>
+ 
 
+ 
+ &lt;/br>
+ &lt;/div>
 
-
-
+ &lt;div class="slide-content">
+ &lt;p>Before you dive into the workshop, there are a few basic things it may help to understand&lt;/p>
 &lt;div class="pagebreak">&lt;/div>
+ &lt;/div>
+&lt;/div>
 
-&lt;h2 id="about-github-actions">
- About GitHub Actions
- &lt;a class="anchor" href="#about-github-actions">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="yaml-yaml-and-more-yaml">
+&lt;h2 id="yaml-yaml-and-more-yaml">
  YAML, YAML, and more YAML
  &lt;a class="anchor" href="#yaml-yaml-and-more-yaml">#&lt;/a>
-&lt;/h3>
-&lt;p>GitHub Actions relies heavily on YAML for defining the work to be done.&lt;/p>
+&lt;/h2>
+&lt;div class="slide">
+ &lt;div class="slide-nav">
+ 
+
+ 
+ &lt;a rel="noopener" class="book-btn prevSegment">
+ Back
+ &lt;/a>
+ 
+
+ 
+
+ 
+ &lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
+ Next
+ &lt;/a>
+ 
+
+ 
+ &lt;/br>
+ &lt;/div>
+
+ &lt;div class="slide-content">
+ &lt;p>GitHub Actions relies heavily on YAML for defining the work to be done.&lt;/p>
 &lt;p>Some basic yaml features that will help you understand the files in this workshop&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">a&lt;/span>: &lt;span style="color:#ae81ff">yaml&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">object&lt;/span>: &lt;span style="color:#ae81ff">uses&lt;/span>
@@ -48,29 +76,38 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">list&lt;/span>: &lt;span style="color:#ae81ff">of objects&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">hypens&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">to&lt;/span>: &lt;span style="color:#ae81ff">start new objects&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="pagebreak">&lt;/div>
+ &lt;/div>
+&lt;/div>
 
+&lt;h2 id="workshop-architecture">
+ Workshop Architecture
+ &lt;a class="anchor" href="#workshop-architecture">#&lt;/a>
+&lt;/h2>
+&lt;div class="slide">
+ &lt;div class="slide-nav">
+ 
 
-&lt;a rel="noopener" class="book-btn prevSegment">
+ 
+ &lt;a rel="noopener" class="book-btn prevSegment">
  Back
-&lt;/a>
+ &lt;/a>
+ 
 
+ 
 
-
-&lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
+ 
+ &lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
  Next
-&lt;/a>
+ &lt;/a>
+ 
 
+ 
+ &lt;/br>
+ &lt;/div>
 
-
-
-&lt;div class="pagebreak">&lt;/div>
-
-&lt;h3 id="basic-architecture">
- Basic Architecture
- &lt;a class="anchor" href="#basic-architecture">#&lt;/a>
-&lt;/h3>
-&lt;ul>
+ &lt;div class="slide-content">
+ &lt;ul>
 &lt;li>A repository On Github&lt;/li>
 &lt;li>GitHub Codespaces to edit code&lt;/li>
 &lt;li>GitHub Actions for CICD
@@ -82,50 +119,122 @@
 &lt;/ul>
 &lt;figure class="text-center">&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/diagrams/arch/arch.png" width="100%">
 &lt;/figure>
-
-
-
-
-&lt;a rel="noopener" class="book-btn prevSegment">
- Back
-&lt;/a>
-
-
-
-&lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
- Next
-&lt;/a>
-
-
-
-
 &lt;div class="pagebreak">&lt;/div>
+ &lt;/div>
+&lt;/div>
 
 &lt;h2 id="about-hugo---the-generator-for-this-site">
  About Hugo - The generator for this site
  &lt;a class="anchor" href="#about-hugo---the-generator-for-this-site">#&lt;/a>
 &lt;/h2>
-&lt;figure class="text-center">&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/hugo-logo-512x512.png" width="50%">
-&lt;/figure>
+&lt;div class="slide">
+ &lt;div class="slide-nav">
+ 
 
+ 
+ &lt;a rel="noopener" class="book-btn prevSegment">
+ Back
+ &lt;/a>
+ 
+
+ 
+
+ 
+
+ 
+ &lt;a href="https://carsonoid.github.io/workshop/1-create-repo/" class="book-btn" style="position: absolute; right:0">
+ Next
+ &lt;/a>
+ 
+ &lt;/br>
+ &lt;/div>
+
+ &lt;div class="slide-content">
+ &lt;figure class="text-center">&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/hugo-logo-512x512.png" width="50%">
+&lt;/figure>
 &lt;p>GitHub Actions (our CICD) and GitHub Pages (our hosting platorm) don&amp;rsquo;t require you to use any particular language or tool.
 But this specific workshop is built on the wonderful, open-source &lt;a href="https://gohugo.io/">Hugo&lt;/a> static site generator and the
 &lt;a href="https://github.com/alex-shpak/hugo-book">hugo-book theme&lt;/a>.&lt;/p></description></item><item><title>1 - Create the Repository</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/</guid><description>&lt;h1 id="create-the-repository">
  Create the Repository
  &lt;a class="anchor" href="#create-the-repository">#&lt;/a>
 &lt;/h1>
-&lt;p>First, you will need to create a new repository on GitHub. This repository will be used to store the code for the workshop and will
+&lt;div class="slide">
+ &lt;div class="slide-nav">
+ 
+
+ 
+
+ 
+
+ 
+ &lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
+ Next
+ &lt;/a>
+ 
+
+ 
+ &lt;/br>
+ &lt;/div>
+
+ &lt;div class="slide-content">
+ &lt;p>First, you will need to create a new repository on GitHub. This repository will be used to store the code for the workshop and will
 be the repository which will run all the GitHub Actions and Workflows.&lt;/p>
 &lt;p>We are going to make a new repository using the GitHub web interface.&lt;/p>
+&lt;div class="pagebreak">&lt;/div>
+ &lt;/div>
+&lt;/div>
+
 &lt;h2 id="instructions">
  Instructions
  &lt;a class="anchor" href="#instructions">#&lt;/a>
 &lt;/h2>
-&lt;p>Open up the &lt;a href="https://github.com/new">New Repository Page&lt;/a> and fill it out with these suggested settings:&lt;/p></description></item><item><title>3 - First Workflow</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/3-first-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/3-first-workflow/</guid><description>&lt;h1 id="first-workflow">
+&lt;div class="slide">
+ &lt;div class="slide-nav">
+ 
+
+ 
+ &lt;a rel="noopener" class="book-btn prevSegment">
+ Back
+ &lt;/a>
+ 
+
+ 
+
+ 
+ &lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
+ Next
+ &lt;/a>
+ 
+
+ 
+ &lt;/br>
+ &lt;/div>
+
+ &lt;div class="slide-content">
+ &lt;p>Open up the &lt;a href="https://github.com/new">New Repository Page&lt;/a> and fill it out with these suggested settings:&lt;/p></description></item><item><title>3 - First Workflow</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/3-first-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/3-first-workflow/</guid><description>&lt;h1 id="first-workflow">
  First Workflow
  &lt;a class="anchor" href="#first-workflow">#&lt;/a>
 &lt;/h1>
-&lt;p>Once you have the bootstrapped repository and workshop content from the &lt;a href="https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/">Create Repo Page&lt;/a> you are ready
+&lt;div class="slide">
+ &lt;div class="slide-nav">
+ 
+
+ 
+
+ 
+
+ 
+ &lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
+ Next
+ &lt;/a>
+ 
+
+ 
+ &lt;/br>
+ &lt;/div>
+
+ &lt;div class="slide-content">
+ &lt;p>Once you have the bootstrapped repository and workshop content from the &lt;a href="https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/">Create Repo Page&lt;/a> you are ready
 to create your first GitHub Actions Workflow!&lt;/p>
 &lt;p>The general overview of this workflow:&lt;/p>
 &lt;ul>
@@ -140,65 +249,69 @@ to create your first GitHub Actions Workflow!&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;blockquote class="book-hint info">
- 
-There are many, many more fields that are valid for workflows, jobs, and steps then we will
-cover here. [See the docs for all the options](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
-
-&lt;/blockquote>
-
-
-
-
-&lt;a rel="noopener" class="book-btn prevSegment">
- Back
-&lt;/a>
-
-
-
-&lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
- Next
-&lt;/a>
-
-
-
-
-&lt;div class="pagebreak">&lt;/div>
-
-&lt;h2 id="create-the-workflow">
- Create the workflow
- &lt;a class="anchor" href="#create-the-workflow">#&lt;/a>
-&lt;/h2>
-&lt;p>Defining a workflow with GitHub actions is easy as making a file! Do the following
-inside your code space:&lt;/p></description></item><item><title>4 - Actions</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/4-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/4-actions/</guid><description>&lt;h1 id="actions">
+&lt;p>There are many, many more fields that are valid for workflows, jobs, and steps then we will
+cover here. &lt;a href="https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions">See the docs for all the options&lt;/a>&lt;/p></description></item><item><title>4 - Actions</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/4-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/4-actions/</guid><description>&lt;h1 id="actions">
  Actions
  &lt;a class="anchor" href="#actions">#&lt;/a>
 &lt;/h1>
-&lt;p>At this point you should have public web page for the workshop built off your repository and
+&lt;div class="slide">
+ &lt;div class="slide-nav">
+ 
+
+ 
+
+ 
+ &lt;a href="https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/3-workflows/" class="book-btn prevSegment">
+ Back
+ &lt;/a>
+ 
+
+ 
+ &lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
+ Next
+ &lt;/a>
+ 
+
+ 
+ &lt;/br>
+ &lt;/div>
+
+ &lt;div class="slide-content">
+ &lt;p>At this point you should have public web page for the workshop built off your repository and
 hosted under your GitHub handle. This section of the workshop will&lt;/p>
 &lt;ul>
 &lt;li>break down the actions currently in the &lt;code>CI/CD&lt;/code> workflow and job.&lt;/li>
 &lt;li>guide you through two kinds of custom actions&lt;/li>
 &lt;/ul>
-
-
-
-&lt;a rel="noopener" class="book-btn prevSegment">
- Back
-&lt;/a>
-
-
-
-&lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
- Next
-&lt;/a>
-
-
-
-
 &lt;div class="pagebreak">&lt;/div>
+ &lt;/div>
+&lt;/div>
 
 &lt;h2 id="current-actions">
  Current Actions
  &lt;a class="anchor" href="#current-actions">#&lt;/a>
 &lt;/h2>
-&lt;p>The &lt;code>CI/CD&lt;/code> job currently has two kinds of actions defined&lt;/p></description></item></channel></rss>
+&lt;div class="slide">
+ &lt;div class="slide-nav">
+ 
+
+ 
+ &lt;a rel="noopener" class="book-btn prevSegment">
+ Back
+ &lt;/a>
+ 
+
+ 
+
+ 
+ &lt;a rel="noopener" class="book-btn nextSegment" style="position: absolute; right:0">
+ Next
+ &lt;/a>
+ 
+
+ 
+ &lt;/br>
+ &lt;/div>
+
+ &lt;div class="slide-content">
+ &lt;p>The &lt;code>CI/CD&lt;/code> job currently has two kinds of actions defined&lt;/p></description></item></channel></rss>
