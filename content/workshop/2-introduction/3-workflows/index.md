@@ -1,9 +1,12 @@
 ---
 weight: 3
 title: "3 - Workflows"
+params:
+  slides: true
 ---
 
-# Workflows
+## Introduction To Workflows
+{{< slide first="true" last="true" nextRef="/workshop/3-first-workflow" >}}
 
 In GitHub Actions, workflows are a colleciton of jobs. Important things to know about workflows
 
@@ -14,4 +17,4 @@ In GitHub Actions, workflows are a colleciton of jobs. Important things to know 
   * By other workflows
 * Workflows do not actually execute directly, they only define jobs which get executed
 
-{{< page-break last="true" nextRef="/workshop/3-first-workflow" >}}
+{{< /slide >}}

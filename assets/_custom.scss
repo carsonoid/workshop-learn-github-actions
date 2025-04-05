@@ -15,6 +15,17 @@
     }
 }
 
+// make all slide headings have equal size and height regardless
+// of heading size, so the buttons don't move
+// we still use different headings so the ToC is correct
+// but all slides should feel the same
+.slides > article > h1,h2,h3,h4,h5,h6 {
+    height: 35pt;
+    margin: 0;
+    font-size: larger;
+    font-weight: bolder !important;
+}
+
 // Give article headings after page breaks some space
 .pagebreak > h1,h2,h3,h4,h5,h6 {
     padding-top: 2vh;

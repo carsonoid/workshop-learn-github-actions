@@ -1,16 +1,21 @@
 ---
 weight: 1
 title: 1 - Create the Repository
+params:
+  slides: true
 ---
 
 # Create the Repository
+{{< slide first="true" >}}
 
 First, you will need to create a new repository on GitHub. This repository will be used to store the code for the workshop and will
 be the repository which will run all the GitHub Actions and Workflows.
 
 We are going to make a new repository using the GitHub web interface.
+{{< /slide >}}
 
 ## Instructions
+{{< slide >}}
 
 Open up the [New Repository Page](https://github.com/new) and fill it out with these suggested settings:
 
@@ -26,9 +31,10 @@ Everything else can be left unchecked. We will be bootstraping the contents of t
 
 ![New Repository Setup Page](create-page.png)
 
-{{< page-break                                                               >}}
+{{< /slide >}}
 
 ## Bootstrap The Repository Contents
+{{< slide >}}
 
 1. Open the respository in GitHub
 2. Click the `Code` button
@@ -44,9 +50,10 @@ Everything else can be left unchecked. We will be bootstraping the contents of t
     ```
     * Alternatively, you can [click here download the assets]({{< abs-url "workshop-assets.tgz" >}}) then right click in the file explorer and choose "Upload", then run `tar -zxvf workshop-assets.tgz`
 
-{{< page-break                                                               >}}
+{{< /slide >}}
 
 ## Run the site live
+{{< slide >}}
 
 The default codespace image comes with `hugo` pre-installed, but it does not have some features required by this site, so we need to install the extended edition:
 
@@ -88,9 +95,10 @@ Press Ctrl+C to stop
 
 > You can even view the site by selecting "open in browser" when codespace pops up.
 
-{{< page-break                                                               >}}
+{{< /slide >}}
 
 ## Build the site
+{{< slide last="true" nextRef="/workshop/2-introduction"  >}}
 
 Runing `hugo server` builds the site for local viewing, but it does not build production-ready assets. To do that, simply run `hugo` without any arguments.
 
@@ -119,4 +127,4 @@ Total in 101 ms
 
 Success! Now we have a `public` directory inside the codespace that contains all the static web assets needed to serve our site.
 
-{{< page-break last="true" nextRef="/workshop/2-introduction" >}}
+{{< /slide >}}

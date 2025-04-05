@@ -1,9 +1,12 @@
 ---
 weight: 2
 title: "2 - Jobs"
+params:
+  slides: true
 ---
 
-# Jobs
+## Introduction To Jobs
+{{< slide first="true" last="true" nextRef="/workshop/2-introduction/3-workflows" >}}
 
 In GitHub Actions, jobs represent a series of steps that are executed in order. Important things to know about jobs:
 
@@ -12,4 +15,4 @@ In GitHub Actions, jobs represent a series of steps that are executed in order. 
 * Jobs can trigger other jobs
 * Jobs *must* be defined inside a [workflow](https://docs.github.com/en/actions/writing-workflows/about-workflows)
 
-{{< page-break last="true" nextRef="/workshop/2-introduction/3-workflows" >}}
+{{< /slide >}}

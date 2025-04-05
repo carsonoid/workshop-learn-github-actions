@@ -22,8 +22,6 @@ While you might normally use the following tools, the workshop is designed to no
   * We will be using the GitHub vscode web editor
   * You can use a local editor if you prefer, but the workshop will use [GitHub Codespaces](https://github.com/features/codespaces)
 
-{{< page-break first="true">}}
-
 ## GitHub Primer
 
 The only requirement to do this workshop is a [GitHub](https://github.com) account. If you do not have one, it is easy and free to [sign up](https://github.com/signup).
@@ -58,4 +56,5 @@ with an idle codespace. If you do not manually stop, the codespace will timout a
 manually exit a space. See the [Billing Documentation](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces) for more information
 on the free tier or added costs.
 
-{{< page-break nextRef="workshop/preamble">}}
+{{< page-break nextRef="workshop/preamble" >}}
+

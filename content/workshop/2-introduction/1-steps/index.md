@@ -1,9 +1,12 @@
 ---
 weight: 1
 title: "1 - Steps"
+params:
+  slides: true
 ---
 
-# Steps
+## Introduction To Steps
+{{< slide first="true" >}}
 
 Steps are the basic building block for jobs. These are the actual **actions** part of GitHub Actions.
 They are essentially a task that you need done. This could be a task that uses code in the repository, but
@@ -13,7 +16,10 @@ it does not have to be. A step could essentially do anything.
 Think of steps as analogous to `functions` in code. They are a logical grouping of behaviors.
 {{< /hint >}}
 
+{{< /slide >}}
+
 ## Examples
+{{< slide last="true" nextRef="/workshop/2-introduction/2-jobs" >}}
 
 ### Basic
 
@@ -52,4 +58,4 @@ Complex scripts may use the yaml multiline syntax to provide
     echo "done"
 ```
 
-{{< page-break last="true" nextRef="/workshop/2-introduction/2-jobs" >}}
+{{< /slide >}}

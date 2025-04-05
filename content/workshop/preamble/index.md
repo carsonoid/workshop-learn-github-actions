@@ -1,17 +1,19 @@
 ---
 weight: -1000
 title: "Preamble"
+params:
+  slides: true
 ---
 
 # Preamble
+{{< slide first="true">}}
 
 Before you dive into the workshop, there are a few basic things it may help to understand
 
-{{<                                                               page-break first="true">}}
+{{< /slide >}}
 
-## About GitHub Actions
-
-### YAML, YAML, and more YAML
+## YAML, YAML, and more YAML
+{{< slide >}}
 
 GitHub Actions relies heavily on YAML for defining the work to be done.
 
@@ -47,9 +49,10 @@ list-of-objects:
     to: start new objects
 ```
 
-{{<                                                               page-break >}}
+{{< /slide >}}
 
-### Basic Architecture
+## Workshop Architecture
+{{< slide >}}
 
 - A repository On Github
 - GitHub Codespaces to edit code
@@ -59,9 +62,10 @@ list-of-objects:
 
 {{< figure src="/diagrams/arch/arch.png" width="100%" class="text-center">}}
 
-{{<                                                               page-break >}}
+{{< /slide >}}
 
 ## About Hugo - The generator for this site
+{{< slide last="true" nextRef="/workshop/1-create-repo/" >}}
 
 {{< figure src="/hugo-logo-512x512.png" width="50%" class="text-center">}}
 
@@ -70,4 +74,4 @@ GitHub Actions (our CICD) and GitHub Pages (our hosting platorm) don't require y
 But this specific workshop is built on the wonderful, open-source [Hugo](https://gohugo.io/) static site generator and the
 [hugo-book theme](https://github.com/alex-shpak/hugo-book).
 
-{{<                                                               page-break last="true" nextRef="/workshop/1-create-repo/" >}}
+{{< /slide >}}

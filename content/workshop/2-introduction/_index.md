@@ -1,9 +1,15 @@
 ---
 weight: 2
 title: 2 - Introducing GitHub Actions
+params:
+  slides: true
 ---
 
-# Where We are
+# Introducing GitHub Actions
+
+{{< slide first="true" >}}
+
+## Where we are
 
 By now you should have a new repository and Codespace running, this workspace includes all the assets for this workshop. However, you can't view the workshop without running `hugo` in your Codespace and accessing a port forward.
 
@@ -19,9 +25,11 @@ By now you should have a new repository and Codespace running, this workspace in
 - To have to have any servers to maintain
 - To have to pay anything for our tiny little personal project
 
-{{<                                                               page-break first="true">}}
 
-# Introducing GitHub Actions
+{{< /slide >}}
+
+## How We Will Do It
+{{< slide >}}
 
 Thankfully, GitHub Actions can give us everything we need. But before we start writing yaml files
 we need to understand the fundamental building blocks of GitHub Actions.
@@ -32,17 +40,15 @@ The yaml snippets below are simplified to help understand the main building-bloc
 
 <iframe src="http://localhost:1313/diagrams/scratch.sozi.html" width="100%" height="600px" allowfullscreen="true" allowtransparency="true" frameborder="0"></iframe>
 
-{{<                                                               page-break >}}
-
+{{< /slide >}}
 
 ## Runners
-
-
-
-{{<                                                               page-break >}}
-
+{{< slide >}}
+TODO
+{{< /slide >}}
 
 ## Steps
+{{< slide >}}
 
 Steps are the smallest building blocks of GitHub Actions. They are defined in yaml and can be as simple
 as executing a single command or as complex as running a nested series of steps.
@@ -54,9 +60,10 @@ name: Build
 run: hugo
 ```
 
-{{<                                                               page-break >}}
+{{< /slide >}}
 
 ## Jobs
+{{< slide >}}
 
 Jobs are collections of one or more steps that should be run in sequence.
 
@@ -75,9 +82,10 @@ steps:
 
 Notice the `Build` step from is now nested in the `steps` list
 
-{{<                                                               page-break >}}
+{{</ slide >}}
 
 ## Workflows
+{{< slide last="true" nextRef="/workshop/3-first-workflow" >}}
 
 Workflows are collections of one or more jobs that should be potentially executed **using the same trigger conditions**.
 
@@ -95,4 +103,4 @@ jobs:
 
 Notice the `Build` job from is now nested in the `jobs` list
 
-{{<                                                               page-break last="true" nextRef="/workshop/3-first-workflow" >}}
+{{< /slide >}}

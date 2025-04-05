@@ -1,9 +1,12 @@
 ---
 weight: 3
 title: 3 - First Workflow
+params:
+  slides: true
 ---
 
 # First Workflow
+{{< slide first="true" >}}
 
 Once you have the bootstrapped repository and workshop content from the [Create Repo Page]({{< ref "1-create-repo" >}}) you are ready
 to create your first GitHub Actions Workflow!
@@ -22,9 +25,10 @@ There are many, many more fields that are valid for workflows, jobs, and steps t
 cover here. [See the docs for all the options](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
 {{< /hint >}}
 
-{{< page-break                                                               >}}
+{{< /slide >}}
 
 ## Create the workflow
+{{< slide >}}
 
 Defining a workflow with GitHub actions is easy as making a file! Do the following
 inside your code space:
@@ -46,9 +50,10 @@ that exactly matches the name `.github/workflows` for the file to be discovered.
 {{< /hint >}}
 
 
-{{< page-break                                                               >}}
+{{< /slide >}}
 
 ## Setup the workflow name and trigger
+{{< slide >}}
 
 Here is the start to our new workflow:
 
@@ -65,9 +70,10 @@ jobs:
   * We will just use `on: push` to have the workflow trigger whenver *any* commits or tags are pushed.
 * The `jobs` field is where all jobs are defined, it is empty for now but we will add the first job in the next step
 
-{{< page-break                                                               >}}
+{{< /slide >}}
 
 ## Setup the build job
+{{< slide >}}
 
 ```yaml
 name: CI/CD
@@ -95,9 +101,10 @@ defined a single job with the `id` of `build`
   * This field is optional and the default is normally only `contents: write`. This workflow is going to need to push the static site content to a branch of the repository, so we need to give it extra permissions.
 * The `steps` field is empty for now, but we will put all our job steps there in the next section.
 
-{{< page-break                                                               >}}
+{{< /slide >}}
 
 ## Add the checkout step
+{{< slide >}}
 
 ```yaml
 name: CI/CD
@@ -131,9 +138,10 @@ Things to note about this action:
    1. It is pinned to a specific tag in the  by using the `@` sign in the action names. This is required, GitHub actions does not have an automatic "latest" tag for actions. (this is a good thing!)
 2. TODO HERE
 
-{{< page-break                                                               >}}
+{{< /slide >}}
 
 ## Add the hugo install step
+{{< slide >}}
 
 ```yaml
 name: CI/CD
@@ -158,9 +166,10 @@ jobs:
           extended: true
 ```
 
-{{< page-break                                                               >}}
+{{< /slide >}}
 
 ## Add the build step
+{{< slide >}}
 
 ```yaml
 name: CI/CD
@@ -187,9 +196,10 @@ jobs:
         run: hugo --minify
 ```
 
-{{< page-break                                                               >}}
+{{< /slide >}}
 
 ## Add the deploy step
+{{< slide >}}
 
 ```yaml
 name: CI/CD
@@ -222,9 +232,10 @@ jobs:
           cname: guts-of-git.carson-anderson.com
 ```
 
-{{< page-break                                                               >}}
+{{< /slide >}}
 
 ## Full Final Workflow
+{{< slide >}}
 
 ```yaml
 name: CI/CD
@@ -259,9 +270,11 @@ jobs:
 
 ```
 
-{{< page-break                                                               >}}
+{{< /slide >}}
+
 
 ## Now run it!
+{{< slide >}}
 
 Because our workflow is set up to trigger on `push` all we have to do to kick it off
 is to simply create a new commit and `push` it to GitHub.
@@ -275,9 +288,11 @@ git push -u origin HEAD
 
 Ok... now what? We pushed the update but how do we know if it is working?
 
-{{< page-break                                                               >}}
+{{< /slide >}}
 
 ## Watching a workflow
+{{< slide last="true" nextRef="/workshop/4-actions" >}}
+
 
 Luckily, GitHub provides a very useful UI to help us track workflows and check
 the status of the jobs. It can be found under the `Actions` tab on the repository's
@@ -285,4 +300,4 @@ GitHub page.
 
 ![actions page](actions-page.png)
 
-{{< page-break last="true"                nextRef="/workshop/4-actions"                                 >}}
+{{< /slide>}}

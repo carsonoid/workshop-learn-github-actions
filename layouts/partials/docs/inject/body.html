@@ -1,4 +1,6 @@
 <script>
+    // DISCLAIMER: This is hacky code, but what did you expect? THis is a GitHub actions workshop not a "good javascript code" workshop
+
     // find all the code tags with class="language-bash" and tweak the styles
     var code = document.querySelectorAll("code.language-bash");
     for (var i = 0; i < code.length; i++) {
@@ -51,7 +53,14 @@
     var nextSegments = document.getElementsByClassName("nextSegment");
     for (var i = 0; i < nextSegments.length; i++) {
         let cur = nextSegments[i];
-        let nextHeading = get_next_heading(cur);
+
+        // go up until we find the div.slide
+        let slide = cur;
+        while (slide && !slide.classList.contains("slide")) {
+            slide = slide.parentElement;
+        }
+
+        let nextHeading = get_next_heading(slide);
 
         if (nextHeading == null) {
             break;
@@ -61,6 +70,9 @@
             nextHeading.scrollIntoView();
             // scroll to the heading
             nextHeading.scrollIntoView();
+            // scroll a tiny bit further down to make things line up more
+            nextHeading.scrollBy(0, -500);
+
             // set the url hash to the heading id
             window.location.hash = nextHeading.id;
         });
@@ -90,6 +102,10 @@
                         if (heading.tagName == "H1" || heading.tagName == "H2" || heading.tagName == "H3" || heading.tagName == "H4" || heading.tagName == "H5" || heading.tagName == "H6") {
                             // scroll the heading to the top of the page
                             heading.scrollIntoView();
+
+                            // scroll a tiny bit further down to make things line up more
+                            heading.scrollBy(0, -500);
+
                             // set the url hash to the heading id
                             window.location.hash = heading.id;
                             return;
