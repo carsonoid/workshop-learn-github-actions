@@ -1,0 +1,11 @@
+{{ if or .Page.IsHome (.Page.Param "toc-mascot") (eq 1 1) }}
+<a href="{{absURL "credits#art"}}" style="outline: none;">
+    <figure>
+        <img src="{{absURL "art/mascot-forward.png"}}" style="width: 100%; height: auto;">
+        <figcaption>
+            <strong>Credit: Debbi Humrich</strong>
+        </figcaption>
+    </figure>
+</a>
+{{ end }}
+
