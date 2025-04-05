@@ -7,7 +7,6 @@ params:
 
 
 # Actions
-
 {{< slide first="true" prevRef="workshop/2-introduction/3-workflows/">}}
 
 At this point you should have public web page for the workshop built off your repository and
@@ -20,7 +19,6 @@ hosted under your GitHub handle. This section of the workshop will
 
 
 ## Current Actions
-
 {{< slide >}}
 
 The `CI/CD` job currently has two kinds of actions defined
@@ -32,7 +30,6 @@ The `CI/CD` job currently has two kinds of actions defined
 
 
 ### 3rd Party Actions
-
 {{< slide >}}
 
 These are actions that are defined in other GitHub Repositories. They encapsulate a
@@ -75,19 +72,17 @@ no overhead.
 
 
 ## New Actions
-
 {{< slide >}}
 
-There are two more types of actions that can be very useful:
+There are two more types of actions that can be very useful.
 
 - [Composite Actions](https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-composite-action)
-- [Javascript Actions](https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-javascript-action)
 - [Docker Container Actions](https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-docker-container-action)
+- [Javascript Actions](https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-javascript-action)
 
 {{< /slide >}}
 
 ### Composite Actions
-
 {{< slide >}}
 
 Composite Actions are a way to combine one or more other actions into a single unit. They are often used to automate complex behaviors into a more streamlined interface.
@@ -98,7 +93,6 @@ Creating and using a new Composite Action locally is as easy as creating a new d
 
 
 #### Build it
-
 {{< slide >}}
 
 To define a new custom composite action: create a new file at `.github/actions/build/action.yaml` with the content below. You might notice that this we are simply moving the `Setup Hugo` and `Build` steps from the original workflow. That is true, but we have now made our own "build" abstraction that is easier to re-use and simplifies the main workflow.
@@ -126,7 +120,6 @@ runs:
 {{< /slide >}}
 
 #### Use it
-
 {{< slide >}}
 
 Then reference it in a job by using a local path reference after checkout.
@@ -146,16 +139,119 @@ You might notice that using a custom action is a lot like using a 3rd party acti
 
 {{< /slide >}}
 
-### Javascript Actions
-
-{{< slide >}}
-
-{{< /slide >}}
-
-
 ### Docker Container Actions
-
 {{< slide last="true" >}}
 
 {{< /slide >}}
 
+### Javascript Actions
+{{< slide >}}
+
+While you can get a lot done with shell scripts, they often have complex dependencies with the runner environment and can be difficult to debug. Javascript actions are a way to write actions in a more structured way using Node.js.
+
+#### Advantages
+
+- Few runtime dependencies because GitHub runners always have a built-in Node.js environment ready to go
+- Prebuilt GitHub Actions node modules simplify many operations
+- Access to the full Node.js ecosystem
+
+#### Disadvantages
+
+- More complex to set up
+- More overhead to maintain
+  - For best results, they should be split into a dedicated repo with a build and release process
+
+{{< /slide >}}
+
+#### Build It
+{{< slide >}}
+
+Building a javascript action is more involved but starts the same way as others. Create a new file at `.github/actions/info/action.yaml` with the content below.
+
+```txt
+.github/actions/info/action.yaml
+```
+
+```yaml
+name: 'Info'
+description: 'Print Build Info Using Javascript'
+inputs:
+  fields:
+    description: 'Fields in the context payload to print out. Comma separated. Empty prints entire payload'
+    required: false
+outputs:
+  time:
+    description: 'The time at which info was printed'
+runs:
+  using: 'node20'
+  main: 'index.js'
+```
+
+Next we init the node components
+
+```shell
+cd .github/actions/info
+npm init -y
+npm install @actions/core
+npm install @actions/github
+```
+
+Now, write the `index.js`
+
+```txt
+.github/actions/info/index.js
+```
+
+```javascript
+const core = require('@actions/core');
+const github = require('@actions/github');
+const fs = require('fs');
+const toml = require('toml');
+
+try {
+  // Get the JSON webhook payload for the event that triggered the workflow
+  const payload = JSON.stringify(github.context.payload, undefined, 2)
+  const fields = core.getInput('fields');
+
+  if (!fields) {
+    console.log("Payload");
+    console.log(payload);
+  } else {
+    console.log("Payload fields:");
+    for (const field of fields.split(',')) {
+      const value = github.context.payload[field.trim()];
+      console.log(`Field: ${field.trim()} = `, value);
+    }
+  }
+
+  // read ./config.toml as toml and put the base url in the summary
+  const config = fs.readFileSync('./config.toml', 'utf-8');
+  const parsed = toml.parse(config);
+  core.summary.addHeading(`Built "${parsed.title}"`, 3);
+
+  if(fields) {
+    let rows = [[{data: "Field", header: true}, {data: "Value", header: true}]];
+    for (const field of fields.split(',')) {
+      rows.push([
+        {data: field.trim(), header: false},
+        {data: JSON.stringify(github.context.payload[field.trim()]), header: false},
+      ]);
+    }
+    core.summary.addTable(rows);
+  }
+  core.summary.write();
+
+  const time = (new Date()).toTimeString();
+
+  core.setOutput("time", time);
+} catch (error) {
+  core.setFailed(error.message);
+}
+```
+
+{{< /slide >}}
+
+
+#### Use It
+{{< slide >}}
+{{< /slide >}}

@@ -8,7 +8,7 @@ Do you want a guided but self-service way to learn how to use GitHub Actions? Th
 This site is designed to help you learn how to use GitHub actions by... deploying this workshop!
 
 
-All of the artwork in this workshop is human generated. For more information on the artist you can click any of the images or see the [art credits]({{< relref path="/credits#art" >}})
+All of the artwork in this workshop is human generated. For more information on the artist you can click any of the images or see the [art credits]({{< relref path="/credits#artist" >}})
 
 {{< hint warning >}}
 ⚠️ Look for the buttons! ⚠️

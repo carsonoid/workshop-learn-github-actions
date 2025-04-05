@@ -12,7 +12,7 @@ that supports it.
 
 **Debbi Humrich**
 
-If you like the artwork and would like to commission your own you can contact Debbie at TODO
+If you like the artwork and would like to commission your own you can contact Debbi at **TODO**
 
 ## Site Credits
 
