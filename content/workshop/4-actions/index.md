@@ -26,6 +26,70 @@ hosted under your GitHub handle. This section of the workshop contains a deep-di
 
 {{< /slide >}}
 
+## Expressions
+{{< slide >}}
+
+GitHub Actions have access to [expressions](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions)
+which allows you extract data and use logic inside the yaml.
+
+You can identify expressions in a yaml with the `${{ }}` notation. Expressions can be used in many different places in the yaml.
+
+```yaml
+if: ${{ github.event_name == 'push' }}
+env:
+  MY_ENV_VAR: ${{ <expression> }}
+  TIMEOUT_SECONDS: ${{ fromJSON(env.time) }}
+run: |
+  if [ "${{ github.repository }}" == "my-org/my-repo" ]; then
+    echo "This is a push event for my repo: $MY_ENV_VAR"
+  fi
+  curl -m $TIMEOUT_SECONDS https://example.com
+```
+
+{{< hint warning icon>}}
+Heads up!
+
+While you can use expressions in *many* locations in the yaml, they are not universally supported.
+
+For example, you can't use expressions to generate the yaml itself.
+
+```yaml
+# invalid 👇
+env: ${{ fromJSON(env) }}
+```
+{{< /hint >}}
+
+{{< /slide >}}
+
+## Metadata
+{{< slide >}}
+
+### [Environment Variables](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables#default-environment-variables)
+
+Actions and all code executing within the context of an action can make use of the many default environment variables.
+
+```yaml
+name: Print
+run: echo "Running job for repo: ${GITHUB_REPOSITORY}"
+```
+
+### [Contexts](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs)
+
+There is often runtime metadata that you need to make use of within your workflow or action's `yaml`.
+
+Actions have access to most of the contexts depending on the specific workflow and job run conditions. Contexts typically have much
+more accessible data then `Environment Variables`. But thanks the the `env` section of actions and workflows you can export *any* context data as an evironment variable
+even if that data is not included in [the defaults](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables#default-environment-variables)
+
+```yaml
+name: Print Sometimes
+if: "${{ job.status == 'success'" }}
+env:
+  JOB_STATUS: ${{job.status}} 
+run: echo "Running job for repo: ${GITHUB_REPOSITORY}"
+```
+
+{{< /slide >}}
 
 ## Current Actions
 {{< slide >}}
@@ -33,7 +97,7 @@ hosted under your GitHub handle. This section of the workshop contains a deep-di
 The `CI/CD` job currently has two kinds of actions defined
 
 * [3rd Party Actions](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/using-pre-written-building-blocks-in-your-workflow#overview)
-* Custom "shell" actions
+* [Script Actions](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/adding-scripts-to-your-workflow)
 
 {{< /slide >}}
 
@@ -41,7 +105,7 @@ The `CI/CD` job currently has two kinds of actions defined
 ### 3rd Party Actions
 {{< slide >}}
 
-These are actions that are defined in other GitHub Repositories. They encapsulate a
+[3rd Party Actions](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/using-pre-written-building-blocks-in-your-workflow#overview) are actions that are defined in other GitHub Repositories. They encapsulate a
 specific behavior or step and can often be very complex behind the scenes.
 
 ```yaml
@@ -54,27 +118,68 @@ specific behavior or step and can often be very complex behind the scenes.
 
 {{< /slide >}}
 
-
-### Custom "shell" actions
+#### Advanced Usage - Pinning
 {{< slide >}}
 
-These are actions that are defined entirely in the workflow step itself. They run using the default shell of the runner
-unless `shell` is specified.
-
-It is common to use yaml multiline strings to put relatively long scripts into the action directly.
+There are a lot of nuanced ways you can invoke 3rd party actions. The `uses` directive supports
+multiple kinds of reference
 
 ```yaml
-- name: Build
-  run: |
-    # there is no built-in env variable for the repo name without owner, so we have to parse it out
-    REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
-    hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
+# by tag
+uses: actions/checkout@v3
+
+# by tag
+uses: actions/checkout@beta
+
+# by commit hash (most secure)
+uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2
+```
+
+{{< /slide >}}
+
+#### Advanced Usage - Outputs
+{{< slide >}}
+
+Actions of any kind can support `outputs`. The outputs available are typically documented
+in the README.md of the action. To use an action's output you need to give it an `id` and use the [`steps` context](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs#steps-context)
+
+```yaml
+  - name: Get an entry with a variable that might contain dots or spaces
+    id: username
+    uses: mikefarah/yq@master
+    with:
+      cmd: yq '.user.name' service.yaml
+  - name: Reuse a variable obtained in another step
+    run: echo ${{ steps.username.outputs.result }}
+```
+
+{{< /slide >}}
+
+### Script Actions
+{{< slide >}}
+
+[Script Actions](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/adding-scripts-to-your-workflow) are actions that are defined entirely in the workflow step itself. They run using the default shell of the runner
+unless `shell` is specified.
+
+```yaml
+name: Build
+run: go build .
+```
+
+It is also common to use yaml multiline strings to put relatively long scripts into the action directly.
+
+```yaml
+name: Build
+run: |
+  # there is no built-in env variable for the repo name without owner, so we have to parse it out
+  REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
+  hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
 ```
 
 These kinds of actions are infinitely flexible but can be highly dependent on the runner and workflow environment.
 Shell scripting is also has a lot of potential pitfalls and easy mistakes that can be made.
 
-Never the less: it is a very common kind of action to use and is often "just enough" to get work done while incurring almost
+Never the less, it is a very common kind of action to use and is often "just enough" to get work done while incurring almost
 no overhead.
 
 {{< /slide >}}
@@ -83,7 +188,7 @@ no overhead.
 ## New Actions
 {{< slide >}}
 
-There are two more types of actions that can be very useful.
+There are two more types of actions that can be very useful. The example workflow did not use them but we will add them now.
 
 - [Composite Actions](https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-composite-action)
 - [Docker Container Actions](https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-docker-container-action)
@@ -94,7 +199,7 @@ There are two more types of actions that can be very useful.
 ### Composite Actions
 {{< slide >}}
 
-Composite Actions are a way to combine one or more other actions into a single unit. They are often used to automate complex behaviors into a more streamlined interface.
+[Composite Actions](https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-composite-action) are a way to combine one or more other actions into a single unit. They are often used to automate complex behaviors into a more streamlined interface.
 
 Creating and using a new Composite Action locally is as easy as creating a new directory and writing an `action.yaml` file.
 
@@ -151,8 +256,56 @@ You might notice that using a custom action is a lot like using a 3rd party acti
 ### Docker Container Actions
 {{< slide >}}
 
-content
+[Docker Container Actions](https://docs.github.com/en/actions/sharing-automations/creating-actions/creating-a-docker-container-action) allow you to package up OCI compatible images
+into a repeatable unit.
 
+#### Advantages
+
+- Fully contained and repeatable build environments
+- All the other great things from containers
+
+#### Disadvantages
+
+- More overhead to maintain due to needing new builds to change behavior
+- Won't work on all runners
+  - Will work on all GitHub runners
+  - Custom runners need to be linux and have extra setup
+
+{{< /slide >}}
+
+
+#### Build It
+{{< slide >}}
+
+> Prerequisite: Build a docker image and publish it somewhere that GitHub Actions can reach. I suggest
+> the [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
+> which is easy to use, free, and integres well with GitHub Actions.
+
+Outside the image creation (not covered here) building a Docker action is pretty easy. Create a new file at `.github/actions/build/action.yaml` with the content below.
+
+
+```txt
+action.yaml
+```
+
+```yaml
+name: 'Hugo CI'
+description: 'Run a hugo command in a container with all the dependencies'
+inputs:
+  cmd:
+    description: 'Which hugo command to run'
+    required: true
+    default: 'build'
+runs:
+  using: 'docker'
+  image: hugomods/hugo:ci-non-root # kitchen-sink hugo image
+  args:
+    - ${{ inputs.cmd }}
+```
+{{< /slide >}}
+
+#### Use It
+{{< slide >}}
 {{< /slide >}}
 
 ### Javascript Actions
