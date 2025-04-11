@@ -8,10 +8,20 @@ params:
 # Create the Repository
 {{< slide first="true" >}}
 
+{{< columns-image >}}
+{{< figure
+  src="/art/gray-dog-icons/turning.png"
+  width="100%"
+>}}
+
+<--->
+
 First, you will need to create a new repository on GitHub. This repository will be used to store the code for the workshop and will
 be the repository which will run all the GitHub Actions and Workflows.
 
 We are going to make a new repository using the GitHub web interface.
+{{< /columns-image >}}
+
 {{< /slide >}}
 
 ## Instructions

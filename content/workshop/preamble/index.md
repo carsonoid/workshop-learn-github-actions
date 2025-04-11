@@ -5,10 +5,19 @@ params:
   slides: true
 ---
 
-# Preamble
+# Workshop Preamble
 {{< slide first="true">}}
 
-Before you dive into the workshop, there are a few basic things it may help to understand
+## Architecture
+
+- A repository On Github
+- GitHub Codespaces to edit code
+- GitHub Actions for CICD
+  - GitHub hosted runners
+- Github Pages for web hosting
+
+{{< figure src="/diagrams/arch/arch.png" width="100%" class="text-center">}}
+
 
 {{< /slide >}}
 
@@ -48,19 +57,6 @@ list-of-objects:
   - uses: hypens
     to: start new objects
 ```
-
-{{< /slide >}}
-
-## Workshop Architecture
-{{< slide >}}
-
-- A repository On Github
-- GitHub Codespaces to edit code
-- GitHub Actions for CICD
-  - GitHub hosted runners
-- Github Pages for web hosting
-
-{{< figure src="/diagrams/arch/arch.png" width="100%" class="text-center">}}
 
 {{< /slide >}}
 

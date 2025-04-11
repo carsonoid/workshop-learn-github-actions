@@ -8,6 +8,14 @@ params:
 # First Workflow
 {{< slide first="true" >}}
 
+{{< columns-image >}}
+{{< figure
+  src="/art/gray-dog-icons/turning.png"
+  width="100%"
+>}}
+
+<--->
+
 Once you have the bootstrapped repository and workshop content from the [Create Repo Page]({{< ref "1-create-repo" >}}) you are ready
 to create your first GitHub Actions Workflow!
 
@@ -24,6 +32,7 @@ The general overview of this workflow:
 There are many, many more fields that are valid for workflows, jobs, and steps then we will
 cover here. [See the docs for all the options](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
 {{< /hint >}}
+{{</ columns-image >}}
 
 {{< /slide >}}
 
@@ -42,7 +51,7 @@ Or
 
 Right Click in the explorer and click "New File" and type `.github/workflows/cicd.yaml`
 
-{{< hint warning >}}
+{{< hint warning icon>}}
 **The folder names matter**
 
 The file name for a workflow file can by anything. But it *must* be in a directory at the root of the repo

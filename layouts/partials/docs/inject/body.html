@@ -1,5 +1,5 @@
 <script>
-    // DISCLAIMER: This is hacky code, but what did you expect? THis is a GitHub actions workshop not a "good javascript code" workshop
+    // DISCLAIMER: This is hacky code, but what did you expect? THis is a GitHub actions workshop not a "good javascript" workshop :P
 
     // find all the code tags with class="language-bash" and tweak the styles
     var code = document.querySelectorAll("code.language-bash");
@@ -90,12 +90,11 @@
     var prevSegment = document.getElementsByClassName("prevSegment");
     for (var i = 0; i < prevSegment.length; i++) {
         prevSegment[i].addEventListener("click", function() {
-            console.log("clicked");
-            // find the previous div with class pagebreak
-            var prev = this.previousElementSibling;
+            console.log("BUTTON",this);
+            // find the previous slide
+            var prev = this.parentElement.parentElement.previousElementSibling;
             while (prev) {
-                console.log(prev);
-                if (prev.classList.contains("pagebreak")) {
+                if (prev.classList.contains("slide")) {
                     // find the first heading before the div
                     var heading = prev.previousElementSibling;
                     while (heading) {

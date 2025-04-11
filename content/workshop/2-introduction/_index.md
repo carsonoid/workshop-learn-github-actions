@@ -5,9 +5,28 @@ params:
   slides: true
 ---
 
-# Introducing GitHub Actions
-
+## Introducing GitHub Actions
 {{< slide first="true" >}}
+
+{{< columns-image ratio="1:3" >}}
+{{< figure
+  src="/art/bluegreen-dog-icons/turning.png"
+  width="100%"
+>}}
+
+<--->
+
+Now that we have bootstrapped our workshop repository, it's time to dig into GitHub Actions!
+
+{{< hint info >}}
+The yaml snippets below are simplified to help understand the main building-blocks of GitHub Actions. They will not work if copied directly.
+{{< /hint >}}
+
+{{< /columns-image >}}
+
+{{< /slide >}}
+
+{{< slide  >}}
 
 ## Where we are
 
@@ -25,20 +44,6 @@ By now you should have a new repository and Codespace running, this workspace in
 - To have to have any servers to maintain
 - To have to pay anything for our tiny little personal project
 
-
-{{< /slide >}}
-
-## How We Will Do It
-{{< slide >}}
-
-Thankfully, GitHub Actions can give us everything we need. But before we start writing yaml files
-we need to understand the fundamental building blocks of GitHub Actions.
-
-{{< hint info >}}
-The yaml snippets below are simplified to help understand the main building-blocks of GitHub Actions. They will not work if copied directly.
-{{< /hint >}}
-
-<iframe src="http://localhost:1313/diagrams/scratch.sozi.html" width="100%" height="600px" allowfullscreen="true" allowtransparency="true" frameborder="0"></iframe>
 
 {{< /slide >}}
 

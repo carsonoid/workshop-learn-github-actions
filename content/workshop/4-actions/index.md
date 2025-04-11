@@ -1,6 +1,6 @@
 ---
 weight: 4
-title: 4 - Actions
+title: 4 - Actions Deep Dive
 params:
   slides: true
 ---
@@ -9,11 +9,20 @@ params:
 # Actions
 {{< slide first="true" prevRef="workshop/2-introduction/3-workflows/">}}
 
-At this point you should have public web page for the workshop built off your repository and
-hosted under your GitHub handle. This section of the workshop will
+{{< columns-image >}}
+{{< figure
+  src="/art/gray-dog-icons/turning.png"
+  width="100%"
+>}}
 
-- break down the actions currently in the `CI/CD` workflow and job.
-- guide you through two kinds of custom actions
+<--->
+
+At this point you should have public web page for the workshop built off your repository and
+hosted under your GitHub handle. This section of the workshop contains a deep-dive on Actions.
+
+- Break down the actions currently in the `CI/CD` workflow and job.
+- Guide you through two kinds of custom actions you can use to enhance your current workflow.
+{{</ columns-image >}}
 
 {{< /slide >}}
 
@@ -131,7 +140,7 @@ You can simply remove the old `Setup Hugo` and `Build` steps from `.github/workf
   uses: ./.github/actions/build
 ```
 
-{{< hint info >}}
+{{< hint info icon>}}
 You might notice that using a custom action is a lot like using a 3rd party action.
 <br /><br />
  That's because 3rd party actions are simply custom actions that have been given dedicated repositories. All 3rd party actions that you use are either composite actions or javascript actions that are simply hosted in a dedicated repository instead of a directory in your own repository.
@@ -140,7 +149,9 @@ You might notice that using a custom action is a lot like using a 3rd party acti
 {{< /slide >}}
 
 ### Docker Container Actions
-{{< slide last="true" >}}
+{{< slide >}}
+
+content
 
 {{< /slide >}}
 
