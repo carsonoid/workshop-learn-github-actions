@@ -8,7 +8,7 @@ title: Introduction
 {{< columns-image ratio="1:3" >}}
 
 {{< figure
-  src="/art/gray-dog-icons/forward.png"
+  src="art/gray-dog-icons/forward.png"
   width="75%"
 >}}
 
