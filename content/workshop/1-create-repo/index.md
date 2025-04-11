@@ -10,7 +10,7 @@ params:
 
 {{< columns-image ratio="1:3">}}
 {{< figure
-  src="art/gray-dog-icons/turning.png"
+  src="/art/gray-dog-icons/turning.png"
   width="100%"
 >}}
 
