@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2 - Introducing GitHub Actions on Learn GitHub Actions</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/</link><description>Recent content in 2 - Introducing GitHub Actions on Learn GitHub Actions</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>1 - Steps</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/1-steps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/1-steps/</guid><description>&lt;h2 id="introduction-to-steps">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2 - Introducing GitHub Actions on Learn GitHub Actions</title><link>https://carsonoid.github.io//workshop/2-introduction/</link><description>Recent content in 2 - Introducing GitHub Actions on Learn GitHub Actions</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://carsonoid.github.io//workshop/2-introduction/index.xml" rel="self" type="application/rss+xml"/><item><title>1 - Steps</title><link>https://carsonoid.github.io//workshop/2-introduction/1-steps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io//workshop/2-introduction/1-steps/</guid><description>&lt;h2 id="introduction-to-steps">
  Introduction To Steps
  &lt;a class="anchor" href="#introduction-to-steps">#&lt;/a>
 &lt;/h2>
@@ -27,7 +27,7 @@ it does not have to be. A step could essentially do anything.&lt;/p>
 &lt;div style="position: relative;">
  &lt;div>
  &lt;blockquote class="book-hint info">
-&lt;p>Think of steps as analogous to &lt;code>functions&lt;/code> in code. They are a logical grouping of behaviors.&lt;/p></description></item><item><title>2 - Jobs</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/2-jobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/2-jobs/</guid><description>&lt;h2 id="introduction-to-jobs">
+&lt;p>Think of steps as analogous to &lt;code>functions&lt;/code> in code. They are a logical grouping of behaviors.&lt;/p></description></item><item><title>2 - Jobs</title><link>https://carsonoid.github.io//workshop/2-introduction/2-jobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io//workshop/2-introduction/2-jobs/</guid><description>&lt;h2 id="introduction-to-jobs">
  Introduction To Jobs
  &lt;a class="anchor" href="#introduction-to-jobs">#&lt;/a>
 &lt;/h2>
@@ -59,7 +59,7 @@ it does not have to be. A step could essentially do anything.&lt;/p>
 &lt;/ul>
 &lt;div class="pagebreak">&lt;/div>
  &lt;/div>
-&lt;/div></description></item><item><title>3 - Workflows</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/3-workflows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/3-workflows/</guid><description>&lt;h2 id="introduction-to-workflows">
+&lt;/div></description></item><item><title>3 - Workflows</title><link>https://carsonoid.github.io//workshop/2-introduction/3-workflows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io//workshop/2-introduction/3-workflows/</guid><description>&lt;h2 id="introduction-to-workflows">
  Introduction To Workflows
  &lt;a class="anchor" href="#introduction-to-workflows">#&lt;/a>
 &lt;/h2>

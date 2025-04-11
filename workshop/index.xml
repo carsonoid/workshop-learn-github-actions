@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workshop on Learn GitHub Actions</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/</link><description>Recent content in Workshop on Learn GitHub Actions</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://carsonoid.github.io/workshop-learn-github-actions/workshop/index.xml" rel="self" type="application/rss+xml"/><item><title>Preamble</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/preamble/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/preamble/</guid><description>&lt;h1 id="workshop-preamble">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workshop on Learn GitHub Actions</title><link>https://carsonoid.github.io//workshop/</link><description>Recent content in Workshop on Learn GitHub Actions</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://carsonoid.github.io//workshop/index.xml" rel="self" type="application/rss+xml"/><item><title>Preamble</title><link>https://carsonoid.github.io//workshop/preamble/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io//workshop/preamble/</guid><description>&lt;h1 id="workshop-preamble">
  Workshop Preamble
  &lt;a class="anchor" href="#workshop-preamble">#&lt;/a>
 &lt;/h1>
@@ -35,7 +35,7 @@
 &lt;/li>
 &lt;li>Github Pages for web hosting&lt;/li>
 &lt;/ul>
-&lt;figure class="text-center">&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/diagrams/arch/arch.png" width="100%">
+&lt;figure class="text-center">&lt;img src="https://carsonoid.github.io//diagrams/arch/arch.png" width="100%">
 &lt;/figure>
 &lt;div class="pagebreak">&lt;/div>
  &lt;/div>
@@ -69,7 +69,7 @@
 
  &lt;div class="slide-content">
  &lt;p>GitHub Actions relies heavily on YAML for defining the work to be done.&lt;/p>
-&lt;p>Some basic yaml features that will help you understand the files in this workshop&lt;/p></description></item><item><title>1 - Create the Repository</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/</guid><description>&lt;h1 id="create-the-repository">
+&lt;p>Some basic yaml features that will help you understand the files in this workshop&lt;/p></description></item><item><title>1 - Create the Repository</title><link>https://carsonoid.github.io//workshop/1-create-repo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io//workshop/1-create-repo/</guid><description>&lt;h1 id="create-the-repository">
  Create the Repository
  &lt;a class="anchor" href="#create-the-repository">#&lt;/a>
 &lt;/h1>
@@ -94,13 +94,13 @@
  &lt;div class="slide-content">
  &lt;div class="book-columns flex flex-wrap" style="justify-content: center; align-items: center;">
  &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: center;">
-&lt;figure>&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/art/gray-dog-icons/turning.png" width="100%">
+&lt;figure>&lt;img src="https://carsonoid.github.io//art/gray-dog-icons/turning.png" width="100%">
 &lt;/figure>
  &lt;/div>
  &lt;div class="flex-even markdown-inner" style="flex-grow: 3; text-align: inherit;">
 &lt;p>First, you will need to create a new repository on GitHub. This repository will be used to store the code for the workshop and will
 be the repository which will run all the GitHub Actions and Workflows.&lt;/p>
-&lt;p>We are going to make a new repository using the GitHub web interface.&lt;/p></description></item><item><title>3 - First Workflow</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/3-first-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/3-first-workflow/</guid><description>&lt;h1 id="first-workflow">
+&lt;p>We are going to make a new repository using the GitHub web interface.&lt;/p></description></item><item><title>3 - First Workflow</title><link>https://carsonoid.github.io//workshop/3-first-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io//workshop/3-first-workflow/</guid><description>&lt;h1 id="first-workflow">
  First Workflow
  &lt;a class="anchor" href="#first-workflow">#&lt;/a>
 &lt;/h1>
@@ -125,11 +125,11 @@ be the repository which will run all the GitHub Actions and Workflows.&lt;/p>
  &lt;div class="slide-content">
  &lt;div class="book-columns flex flex-wrap" style="justify-content: center; align-items: center;">
  &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: center;">
-&lt;figure>&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/art/bluegreen-dog-icons/turning.png" width="100%">
+&lt;figure>&lt;img src="https://carsonoid.github.io//art/bluegreen-dog-icons/turning.png" width="100%">
 &lt;/figure>
  &lt;/div>
  &lt;div class="flex-even markdown-inner" style="flex-grow: 3; text-align: inherit;">
-&lt;p>Once you have the bootstrapped repository and workshop content from the &lt;a href="https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/">Create Repo Page&lt;/a> you are ready
+&lt;p>Once you have the bootstrapped repository and workshop content from the &lt;a href="https://carsonoid.github.io//workshop/1-create-repo/">Create Repo Page&lt;/a> you are ready
 to create your first GitHub Actions Workflow!&lt;/p>
 &lt;p>The general overview of this workflow:&lt;/p>
 &lt;ul>
@@ -147,7 +147,7 @@ to create your first GitHub Actions Workflow!&lt;/p>
  &lt;div>
  &lt;blockquote class="book-hint info">
 &lt;p>There are many, many more fields that are valid for workflows, jobs, and steps then we will
-cover here. &lt;a href="https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions">See the docs for all the options&lt;/a>&lt;/p></description></item><item><title>4 - Actions Deep Dive</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/4-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/4-actions/</guid><description>&lt;h1 id="actions">
+cover here. &lt;a href="https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions">See the docs for all the options&lt;/a>&lt;/p></description></item><item><title>4 - Actions Deep Dive</title><link>https://carsonoid.github.io//workshop/4-actions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io//workshop/4-actions/</guid><description>&lt;h1 id="actions">
  Actions
  &lt;a class="anchor" href="#actions">#&lt;/a>
 &lt;/h1>
@@ -158,7 +158,7 @@ cover here. &lt;a href="https://docs.github.com/en/actions/writing-workflows/wor
  
 
  
- &lt;a href="https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/3-workflows/" class="book-btn prevSegment">
+ &lt;a href="https://carsonoid.github.io/workshop/2-introduction/3-workflows/" class="book-btn prevSegment">
  Back
  &lt;/a>
  
@@ -176,7 +176,7 @@ cover here. &lt;a href="https://docs.github.com/en/actions/writing-workflows/wor
  &lt;div class="slide-content">
  &lt;div class="book-columns flex flex-wrap" style="justify-content: center; align-items: center;">
  &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: center;">
-&lt;figure>&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/art/bluegreen-dog-icons/turning.png" width="100%">
+&lt;figure>&lt;img src="https://carsonoid.github.io//art/bluegreen-dog-icons/turning.png" width="100%">
 &lt;/figure>
  &lt;/div>
  &lt;div class="flex-even markdown-inner" style="flex-grow: 3; text-align: inherit;">
