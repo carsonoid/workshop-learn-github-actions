@@ -1,10 +1,11 @@
 name: 'Hugo Build'
 description: 'Run a hugo build in a container with all the dependencies'
 inputs:
-  baseURL:
-    description: 'The name of the repository without owner'
-    required: true
   repoOwner:
+    description: 'The owner of the repository'
+    required: true
+    default: ${{ github.repository_owner }}
+  repoName:
     description: 'The owner of the repository'
     required: true
     default: ${{ github.repository_owner }}
@@ -16,4 +17,4 @@ runs:
     - build
     - --minify
     - -b
-    - ${{ format('https://{0}.github.io/{1}/', inputs.repoOwner, inputs.baseURL) }}
+    - ${{ format('https://{0}.github.io/{1}/', inputs.repoOwner, inputs.repoName) }}
