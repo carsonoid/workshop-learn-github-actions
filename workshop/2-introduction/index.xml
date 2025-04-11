@@ -24,7 +24,9 @@
  &lt;p>Steps are the basic building block for jobs. These are the actual &lt;strong>actions&lt;/strong> part of GitHub Actions.
 They are essentially a task that you need done. This could be a task that uses code in the repository, but
 it does not have to be. A step could essentially do anything.&lt;/p>
-&lt;blockquote class="book-hint info">
+&lt;div style="position: relative;">
+ &lt;div>
+ &lt;blockquote class="book-hint info">
 &lt;p>Think of steps as analogous to &lt;code>functions&lt;/code> in code. They are a logical grouping of behaviors.&lt;/p></description></item><item><title>2 - Jobs</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/2-jobs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/2-introduction/2-jobs/</guid><description>&lt;h2 id="introduction-to-jobs">
  Introduction To Jobs
  &lt;a class="anchor" href="#introduction-to-jobs">#&lt;/a>
