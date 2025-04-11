@@ -97,7 +97,7 @@
 &lt;figure>&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/art/gray-dog-icons/turning.png" width="100%">
 &lt;/figure>
  &lt;/div>
- &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: inherit;">
+ &lt;div class="flex-even markdown-inner" style="flex-grow: 3; text-align: inherit;">
 &lt;p>First, you will need to create a new repository on GitHub. This repository will be used to store the code for the workshop and will
 be the repository which will run all the GitHub Actions and Workflows.&lt;/p>
 &lt;p>We are going to make a new repository using the GitHub web interface.&lt;/p></description></item><item><title>3 - First Workflow</title><link>https://carsonoid.github.io/workshop-learn-github-actions/workshop/3-first-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://carsonoid.github.io/workshop-learn-github-actions/workshop/3-first-workflow/</guid><description>&lt;h1 id="first-workflow">
@@ -125,10 +125,10 @@ be the repository which will run all the GitHub Actions and Workflows.&lt;/p>
  &lt;div class="slide-content">
  &lt;div class="book-columns flex flex-wrap" style="justify-content: center; align-items: center;">
  &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: center;">
-&lt;figure>&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/art/gray-dog-icons/turning.png" width="100%">
+&lt;figure>&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/art/bluegreen-dog-icons/turning.png" width="100%">
 &lt;/figure>
  &lt;/div>
- &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: inherit;">
+ &lt;div class="flex-even markdown-inner" style="flex-grow: 3; text-align: inherit;">
 &lt;p>Once you have the bootstrapped repository and workshop content from the &lt;a href="https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/">Create Repo Page&lt;/a> you are ready
 to create your first GitHub Actions Workflow!&lt;/p>
 &lt;p>The general overview of this workflow:&lt;/p>
@@ -176,10 +176,10 @@ cover here. &lt;a href="https://docs.github.com/en/actions/writing-workflows/wor
  &lt;div class="slide-content">
  &lt;div class="book-columns flex flex-wrap" style="justify-content: center; align-items: center;">
  &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: center;">
-&lt;figure>&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/art/gray-dog-icons/turning.png" width="100%">
+&lt;figure>&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/art/bluegreen-dog-icons/turning.png" width="100%">
 &lt;/figure>
  &lt;/div>
- &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: inherit;">
+ &lt;div class="flex-even markdown-inner" style="flex-grow: 3; text-align: inherit;">
 &lt;p>At this point you should have public web page for the workshop built off your repository and
 hosted under your GitHub handle. This section of the workshop contains a deep-dive on Actions.&lt;/p>
 &lt;ul>
