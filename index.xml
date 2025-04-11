@@ -94,7 +94,7 @@
  &lt;div class="slide-content">
  &lt;div class="book-columns flex flex-wrap" style="justify-content: center; align-items: center;">
  &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: center;">
-&lt;figure>&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/art/gray-dog-icons/turning.png" width="100%">
+&lt;figure>&lt;img src="art/gray-dog-icons/turning.png" width="100%">
 &lt;/figure>
  &lt;/div>
  &lt;div class="flex-even markdown-inner" style="flex-grow: 3; text-align: inherit;">
@@ -186,7 +186,7 @@ it does not have to be. A step could essentially do anything.&lt;/p>
  &lt;div class="slide-content">
  &lt;div class="book-columns flex flex-wrap" style="justify-content: center; align-items: center;">
  &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: center;">
-&lt;figure>&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/art/bluegreen-dog-icons/turning.png" width="100%">
+&lt;figure>&lt;img src="art/bluegreen-dog-icons/turning.png" width="100%">
 &lt;/figure>
  &lt;/div>
  &lt;div class="flex-even markdown-inner" style="flex-grow: 3; text-align: inherit;">
@@ -274,7 +274,7 @@ cover here. &lt;a href="https://docs.github.com/en/actions/writing-workflows/wor
  &lt;div class="slide-content">
  &lt;div class="book-columns flex flex-wrap" style="justify-content: center; align-items: center;">
  &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: center;">
-&lt;figure>&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/art/bluegreen-dog-icons/turning.png" width="100%">
+&lt;figure>&lt;img src="art/bluegreen-dog-icons/turning.png" width="100%">
 &lt;/figure>
  &lt;/div>
  &lt;div class="flex-even markdown-inner" style="flex-grow: 3; text-align: inherit;">
