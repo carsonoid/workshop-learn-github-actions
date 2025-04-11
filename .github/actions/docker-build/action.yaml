@@ -16,4 +16,4 @@ runs:
     - build
     - --minify
     - -b
-    - ${{ format "https://%s.github.io/%s/" inputs.repoOwner inputs.baseURL }}
+    - ${{ printf "https://%s.github.io/%s/" inputs.repoOwner inputs.baseURL }}
