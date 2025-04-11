@@ -6,6 +6,7 @@ theme = 'hugo-book'
 # Book configuration
 disablePathToLower = false
 enableGitInfo = false
+canonifyURL = true
 
 # Needed for mermaid/katex shortcodes
 [markup]
