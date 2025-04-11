@@ -1,7 +1,7 @@
 name: 'Hugo Build'
 description: 'Run a hugo build in a container with all the dependencies'
 inputs:
-  repoName:
+  baseURL:
     description: 'The name of the repository without owner'
     required: true
   repoOwner:
@@ -11,12 +11,9 @@ inputs:
 runs:
   using: 'docker'
   image: hugomods/hugo:ci-non-root # kitchen-sink hugo image
-  env:
-    REPO_NAME: ${{ inputs.repoName }}
-    GITHUB_REPOSITORY_OWNER: ${{ inputs.repoOwner }}
   args:
     - hugo
     - build
     - --minify
     - -b
-    - https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/
+    - ${{ format "https://%s.github.io/%s/" inputs.repoOwner inputs.baseURL }}
