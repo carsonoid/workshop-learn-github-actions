@@ -35,7 +35,8 @@
 &lt;/li>
 &lt;li>Github Pages for web hosting&lt;/li>
 &lt;/ul>
-&lt;figure class="text-center">&lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/diagrams/arch/arch.png" width="100%">
+&lt;figure class="text-center">
+ &lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/diagrams/arch/arch.png" width="100%">
 &lt;/figure>
 &lt;div class="pagebreak">&lt;/div>
  &lt;/div>
@@ -94,7 +95,8 @@
  &lt;div class="slide-content">
  &lt;div class="book-columns flex flex-wrap" style="justify-content: center; align-items: center;">
  &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: center;">
-&lt;figure>&lt;img src="art/gray-dog-icons/turning.png" width="100%">
+&lt;figure>
+ &lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/workshop/1-create-repo/art/gray-dog-icons/turning.png" width="100%">
 &lt;/figure>
  &lt;/div>
  &lt;div class="flex-even markdown-inner" style="flex-grow: 3; text-align: inherit;">
@@ -125,7 +127,8 @@ be the repository which will run all the GitHub Actions and Workflows.&lt;/p>
  &lt;div class="slide-content">
  &lt;div class="book-columns flex flex-wrap" style="justify-content: center; align-items: center;">
  &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: center;">
-&lt;figure>&lt;img src="art/bluegreen-dog-icons/turning.png" width="100%">
+&lt;figure>
+ &lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/workshop/3-first-workflow/art/bluegreen-dog-icons/turning.png" width="100%">
 &lt;/figure>
  &lt;/div>
  &lt;div class="flex-even markdown-inner" style="flex-grow: 3; text-align: inherit;">
@@ -176,7 +179,8 @@ cover here. &lt;a href="https://docs.github.com/en/actions/writing-workflows/wor
  &lt;div class="slide-content">
  &lt;div class="book-columns flex flex-wrap" style="justify-content: center; align-items: center;">
  &lt;div class="flex-even markdown-inner" style="flex-grow: 1; text-align: center;">
-&lt;figure>&lt;img src="art/bluegreen-dog-icons/turning.png" width="100%">
+&lt;figure>
+ &lt;img src="https://carsonoid.github.io/workshop-learn-github-actions/workshop/4-actions/art/bluegreen-dog-icons/turning.png" width="100%">
 &lt;/figure>
  &lt;/div>
  &lt;div class="flex-even markdown-inner" style="flex-grow: 3; text-align: inherit;">
