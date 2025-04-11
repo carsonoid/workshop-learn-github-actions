@@ -8,9 +8,9 @@ params:
 # First Workflow
 {{< slide first="true" >}}
 
-{{< columns-image >}}
+{{< columns-image ratio="1:3" >}}
 {{< figure
-  src="/art/gray-dog-icons/turning.png"
+  src="/art/bluegreen-dog-icons/turning.png"
   width="100%"
 >}}
 

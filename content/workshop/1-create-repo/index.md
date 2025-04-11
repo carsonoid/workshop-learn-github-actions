@@ -8,7 +8,7 @@ params:
 # Create the Repository
 {{< slide first="true" >}}
 
-{{< columns-image >}}
+{{< columns-image ratio="1:3">}}
 {{< figure
   src="/art/gray-dog-icons/turning.png"
   width="100%"
