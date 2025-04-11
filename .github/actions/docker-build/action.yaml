@@ -10,7 +10,7 @@ inputs:
     default: ${{ github.repository_owner }}
 runs:
   using: 'docker'
-  image: hugomods/hugo:ci-non-root # kitchen-sink hugo image
+  image: hugomods/hugo:ci # kitchen-sink hugo image
   args:
     - hugo
     - build
