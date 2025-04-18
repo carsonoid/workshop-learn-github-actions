@@ -69,8 +69,8 @@ Here is the start to our new workflow:
 
 ```yaml
 name: CI/CD
+
 on: push
-jobs:
 ```
 
 ---
@@ -87,15 +87,16 @@ jobs:
 
 ```yaml
 name: CI/CD
+
 on: push
 
 jobs:
-  build:
-    name: Build
+  build-site:
+    name: Build Site
     runs-on: ubuntu-20.04
     permissions:
       contents: write
-    steps:
+    steps: # TODO:
 ```
 
 ---
@@ -118,11 +119,12 @@ defined a single job with the `id` of `build`
 
 ```yaml
 name: CI/CD
+
 on: push
 
 jobs:
-  build:
-    name: Build
+  build-site:
+    name: Build Site
     runs-on: ubuntu-20.04
     permissions:
       contents: write
@@ -132,6 +134,7 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
+
 ```
 
 ---
@@ -155,11 +158,12 @@ Things to note about this action:
 
 ```yaml
 name: CI/CD
+
 on: push
 
 jobs:
-  build:
-    name: Build
+  build-site:
+    name: Build Site
     runs-on: ubuntu-20.04
     permissions:
       contents: write
@@ -169,6 +173,7 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
@@ -183,11 +188,12 @@ jobs:
 
 ```yaml
 name: CI/CD
+
 on: push
 
 jobs:
-  build:
-    name: Build
+  build-site:
+    name: Build Site
     runs-on: ubuntu-20.04
     permissions:
       contents: write
@@ -197,13 +203,18 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
           extended: true
+
       - name: Build
-        run: hugo --minify
+        run: |
+          # there is no built-in env variable for the repo name without owner, so we have to parse it out
+          REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
+          hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
 ```
 
 {{< /slide >}}
@@ -213,11 +224,12 @@ jobs:
 
 ```yaml
 name: CI/CD
+
 on: push
 
 jobs:
-  build:
-    name: Build
+  build-site:
+    name: Build Site
     runs-on: ubuntu-20.04
     permissions:
       contents: write
@@ -227,19 +239,25 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
           extended: true
+
       - name: Build
-        run: hugo --minify
+        run: |
+          # there is no built-in env variable for the repo name without owner, so we have to parse it out
+          REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
+          hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
+
       - name: Deploy
+        if: github.ref == 'refs/heads/main' or github.ref == 'refs/heads/init'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          cname: guts-of-git.carson-anderson.com
 ```
 
 {{< /slide >}}
@@ -249,12 +267,12 @@ jobs:
 
 ```yaml
 name: CI/CD
+
 on: push
 
 jobs:
-  build:
-    if : github.ref == 'refs/heads/main'
-    name: Build
+  build-site:
+    name: Build Site
     runs-on: ubuntu-20.04
     permissions:
       contents: write
@@ -264,20 +282,25 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: 'latest'
           extended: true
+
       - name: Build
-        run: hugo --minify
+        run: |
+          # there is no built-in env variable for the repo name without owner, so we have to parse it out
+          REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
+          hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
+
       - name: Deploy
+        if: github.ref == 'refs/heads/main' or github.ref == 'refs/heads/init'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          cname: guts-of-git.carson-anderson.com
-
 ```
 
 {{< /slide >}}
