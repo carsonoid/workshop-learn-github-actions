@@ -1,6 +1,7 @@
 .PHONY: workshop-assets
 workshop-assets:
-	tar -zcvf static/workshop-assets.tgz config.toml content layouts LICENSE resources static themes .gitignore .gitmodules
+	tar -zcvf workshop-assets.tgz config.toml content layouts LICENSE resources static themes .gitignore .gitmodules Makefile README.md
+	mv workshop-assets.tgz static/workshop-assets.tgz
 
 .PHONY: install-hugo-codespace
 install-hugo-codespace:
