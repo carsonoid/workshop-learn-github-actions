@@ -119,13 +119,13 @@ A few tips:
 A simple one-liner to allow easy "up and enter" iteration is
 
 ```sh
-git add .; git commit -m "fixup-$(date "+%Y%m%dT%H%M%S")"; 
-``` 
+git add .; git commit -m "fixup-$(date "+%Y%m%dT%H%M%S")"; git push
+```
 
 You can make it into an easy alias with
 
 ```
-alias fixup='git add .; git commit -m "fixup-$(date "+%Y%m%dT%H%M%S")";'
+alias fixup='git add .; git commit -m "fixup-$(date "+%Y%m%dT%H%M%S")"; git push'
 ```
 
 {{< /slide >}}
