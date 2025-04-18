@@ -11,11 +11,29 @@
 	},
 	"New slide": {
 		"scope": "markdown,md",
-		"prefix": "hint",
+		"prefix": "newslide",
 		"body": [
 			"{{< slide >}}",
 			"$0",
 			"{{< /hint >}}",
+		],
+		"description": "Add a slide to the page"
+	},
+	"New image columns": {
+		"scope": "markdown,md",
+		"prefix": "image-column",
+		"body": [
+			"{{< columns-image ratio=\"1:3\" >}}",
+			"{{< figure",
+			"  src=\"/art/bluegreen-dog-icons/turning.png\"",
+			"  width=\"100%\"",
+			">}}",
+			"",
+			"<--->",
+			"",
+			"$0",
+			"",
+			"{{< /columns-image >}}",
 		],
 		"description": "Add a slide to the page"
 	}
