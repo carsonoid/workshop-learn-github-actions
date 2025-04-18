@@ -62,7 +62,7 @@ that exactly matches the name `.github/workflows` for the file to be discovered.
 
 {{< /slide >}}
 
-## Setup the workflow name and trigger
+### Add the workflow name and trigger
 {{< slide >}}
 
 Here is the start to our new workflow:
@@ -82,7 +82,7 @@ on: push
 
 {{< /slide >}}
 
-## Setup the build job
+### Add the build job
 {{< slide >}}
 
 ```yaml
@@ -93,7 +93,7 @@ on: push
 jobs:
   build-site:
     name: Build Site
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps: # TODO:
@@ -114,7 +114,7 @@ defined a single job with the `id` of `build`
 
 {{< /slide >}}
 
-## Add the checkout step
+### Add the checkout step
 {{< slide >}}
 
 ```yaml
@@ -125,7 +125,7 @@ on: push
 jobs:
   build-site:
     name: Build Site
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
@@ -153,7 +153,7 @@ Things to note about this action:
 
 {{< /slide >}}
 
-## Add the hugo install step
+### Add the hugo install step
 {{< slide >}}
 
 ```yaml
@@ -164,7 +164,7 @@ on: push
 jobs:
   build-site:
     name: Build Site
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
@@ -183,7 +183,7 @@ jobs:
 
 {{< /slide >}}
 
-## Add the build step
+### Add the build step
 {{< slide >}}
 
 ```yaml
@@ -194,7 +194,7 @@ on: push
 jobs:
   build-site:
     name: Build Site
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
@@ -219,7 +219,7 @@ jobs:
 
 {{< /slide >}}
 
-## Add the deploy step
+### Add the deploy step
 {{< slide >}}
 
 ```yaml
@@ -230,7 +230,7 @@ on: push
 jobs:
   build-site:
     name: Build Site
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
@@ -253,7 +253,7 @@ jobs:
           hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
 
       - name: Deploy
-        if: github.ref == 'refs/heads/main' or github.ref == 'refs/heads/init'
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/init'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -262,7 +262,7 @@ jobs:
 
 {{< /slide >}}
 
-## Full Final Workflow
+### Full final workflow yaml
 {{< slide >}}
 
 ```yaml
@@ -273,7 +273,7 @@ on: push
 jobs:
   build-site:
     name: Build Site
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
@@ -296,7 +296,7 @@ jobs:
           hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
 
       - name: Deploy
-        if: github.ref == 'refs/heads/main' or github.ref == 'refs/heads/init'
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/init'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -332,5 +332,18 @@ the status of the jobs. It can be found under the `Actions` tab on the repositor
 GitHub page.
 
 ![actions page](actions-page.png)
+
+{{< /slide>}}
+
+## Check for the deploy workflow
+{{< slide last="true" nextRef="/workshop/4-actions" >}}
+
+If everything went well, then you should be able to refresh the `Actions` tab
+and see a second workflow that was automatically triggered by the push to the `gh-pages`
+branch that was done by `peaceiris/actions-gh-pages@v3`
+
+![deploy action log](deploy-action-log.png)
+
+![automatic pages build workflow](pages-build-deployment.png)
 
 {{< /slide>}}
