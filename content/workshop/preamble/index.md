@@ -105,7 +105,7 @@ much more secure and easier to serve and are required if you want to host your s
 {{< /slide >}}
 
 ## Working With `git` based CICD
-{{< slide last="true" nextRef="/workshop/1-create-repo/" title="Start the Workshop already!" >}}
+{{< slide last="true" nextRef="/workshop/1-create-repo/" >}}
 
 Using yaml files and git to configure CICD comes with many, many benefits. But it can
 also be incredibly frustrating when you are going through the inevitable trial and error
@@ -124,8 +124,10 @@ git add .; git commit -m "fixup-$(date "+%Y%m%dT%H%M%S")"; git push
 
 You can make it into an easy alias with
 
-```
+```sh
 alias fixup='git add .; git commit -m "fixup-$(date "+%Y%m%dT%H%M%S")"; git push'
 ```
+
+Now all you have to do to test a CICD change is type `fixup` and hit enter!
 
 {{< /slide >}}
