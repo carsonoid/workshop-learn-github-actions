@@ -1,0 +1,22 @@
+{
+	"New hint": {
+		"scope": "markdown,md",
+		"prefix": "hint",
+		"body": [
+			"{{< hint ${1:level:hint,warning,alert} ${2:icon}>}}",
+			"$0",
+			"{{< /hint >}}",
+		],
+		"description": "Add a hint to the page"
+	},
+	"New slide": {
+		"scope": "markdown,md",
+		"prefix": "hint",
+		"body": [
+			"{{< slide >}}",
+			"$0",
+			"{{< /hint >}}",
+		],
+		"description": "Add a slide to the page"
+	}
+}
