@@ -107,6 +107,25 @@ much more secure and easier to serve and are required if you want to host your s
 ## Working With `git` based CICD
 {{< slide last="true" nextRef="/workshop/1-create-repo/" title="Start the Workshop already!" >}}
 
+Using yaml files and git to configure CICD comes with many, many benefits. But it can
+also be incredibly frustrating when you are going through the inevitable trial and error
+that is required when working through issues.
 
+A few tips:
+
+- Use the `git` CLI so you can automate changes
+- [Learn how to use `git rebase -i` to clean up commits](https://guts-of-git.carson-anderson.com/)
+
+A simple one-liner to allow easy "up and enter" iteration is
+
+```sh
+git add .; git commit -m "fixup-$(date \"+%Y%m%dT%H%M%S\")";git push 
+```
+
+You can make it into an easy alias with
+
+```
+alias fixup='git add .; git commit -m "fixup-$(date '+%Y%m%dT%H%M%S')";git push'
+```
 
 {{< /slide >}}
