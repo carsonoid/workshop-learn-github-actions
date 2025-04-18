@@ -9,6 +9,7 @@ title: Introduction
 
 {{< figure
   src="/art/gray-dog-icons/forward.png"
+  link="/credits"
   width="75%"
 >}}
 
@@ -33,8 +34,7 @@ Look for the buttons!
 <br /><br />
 While browsable for later reference, this site and every page on the workshop is designed to be viewable as a linear experience.
 <br /><br />
-If you are ever not sure what to do next, just look for the blue buttons at the bottom of the page. Just
-like the one just below this notice. 👇
+If you are ever not sure what to do next, just look for the blue buttons at the top of the page.
 {{< /hint >}}
 
 

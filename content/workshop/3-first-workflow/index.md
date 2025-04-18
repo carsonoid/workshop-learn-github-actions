@@ -11,6 +11,7 @@ params:
 {{< columns-image ratio="1:3" >}}
 {{< figure
   src="/art/bluegreen-dog-icons/turning.png"
+  link="/credits"
   width="100%"
 >}}
 

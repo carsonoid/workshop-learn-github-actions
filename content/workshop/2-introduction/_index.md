@@ -11,6 +11,7 @@ params:
 {{< columns-image ratio="1:3" >}}
 {{< figure
   src="/art/bluegreen-dog-icons/turning.png"
+  link="/credits"
   width="100%"
 >}}
 
@@ -18,11 +19,13 @@ params:
 
 Now that we have bootstrapped our workshop repository, it's time to dig into GitHub Actions!
 
-{{< hint info >}}
-The yaml snippets below are simplified to help understand the main building-blocks of GitHub Actions. They will not work if copied directly.
-{{< /hint >}}
-
 {{< /columns-image >}}
+
+{{< hint danger >}}
+The yaml snippets in this section are simplified to help understand the main building-blocks of GitHub Actions. They will not work if copied directly.
+
+At the end of the section will be a complete file that can safely be copy and pasted.
+{{< /hint >}}
 
 {{< /slide >}}
 
@@ -47,13 +50,10 @@ By now you should have a new repository and Codespace running, this workspace in
 
 {{< /slide >}}
 
-## Runners
-{{< slide >}}
-TODO
-{{< /slide >}}
-
 ## Steps
 {{< slide >}}
+
+{{< figure src="/diagrams/component-steps.png" width="100%" class="text-center">}}
 
 Steps are the smallest building blocks of GitHub Actions. They are defined in yaml and can be as simple
 as executing a single command or as complex as running a nested series of steps.
@@ -90,7 +90,7 @@ Notice the `Build` step from is now nested in the `steps` list
 {{</ slide >}}
 
 ## Workflows
-{{< slide last="true" nextRef="/workshop/3-first-workflow" >}}
+{{< slide >}}
 
 Workflows are collections of one or more jobs that should be potentially executed **using the same trigger conditions**.
 
@@ -108,4 +108,9 @@ jobs:
 
 Notice the `Build` job from is now nested in the `jobs` list
 
+{{< /slide >}}
+
+## Runners
+{{< slide last="true" nextRef="/workshop/3-first-workflow" >}}
+TODO
 {{< /slide >}}

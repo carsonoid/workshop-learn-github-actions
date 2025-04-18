@@ -5,12 +5,13 @@ params:
   slides: true
 ---
 
-# Create the Repository
+# Step 1: Create the Repository
 {{< slide first="true" >}}
 
 {{< columns-image ratio="1:3">}}
 {{< figure
   src="/art/gray-dog-icons/turning.png"
+  link="/credits"
   width="100%"
 >}}
 
@@ -21,6 +22,15 @@ be the repository which will run all the GitHub Actions and Workflows.
 
 We are going to make a new repository using the GitHub web interface.
 {{< /columns-image >}}
+
+
+{{< hint danger >}}
+## If you want to follow along: do not fork
+
+For the purposes of this workshop, start from a completely empty repostory. While forking is normally fine, doing so will make
+it impossible to follow along in the workshop as it is designed.
+
+{{< /hint >}}
 
 {{< /slide >}}
 
