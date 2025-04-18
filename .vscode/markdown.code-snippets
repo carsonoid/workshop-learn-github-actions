@@ -15,7 +15,7 @@
 		"body": [
 			"{{< slide >}}",
 			"$0",
-			"{{< /hint >}}",
+			"{{< /slide >}}",
 		],
 		"description": "Add a slide to the page"
 	},

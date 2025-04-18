@@ -79,7 +79,7 @@ list-of-objects:
 {{< /slide >}}
 
 ## About Hugo - The generator for this site
-{{< slide last="true" nextRef="/workshop/1-create-repo/" title="Start the Workshop already!" >}}
+{{< slide >}}
 
 {{< columns-image ratio="1:3" >}}
 
@@ -101,6 +101,12 @@ Hugo is a static website generator that takes in markdown files and uses templat
 evaluation on the server-side. This makes it a perfect tool for generating blogs or other web sites. Static assets are also
 much more secure and easier to serve and are required if you want to host your site with GitHub Pages.
 {{< /hint >}}
+
+{{< /slide >}}
+
+## Working With `git` based CICD
+{{< slide last="true" nextRef="/workshop/1-create-repo/" title="Start the Workshop already!" >}}
+
 
 
 {{< /slide >}}
