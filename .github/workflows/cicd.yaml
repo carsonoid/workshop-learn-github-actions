@@ -27,8 +27,8 @@ jobs:
           REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
           hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
 
-          # make the assets tgz
-          make workshop-assets.tgz
+          # make the assets tgz users need to bootstrap the workshop
+          make workshop-assets
 
       - name: Deploy
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/init'
