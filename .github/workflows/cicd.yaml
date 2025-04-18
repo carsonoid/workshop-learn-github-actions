@@ -5,7 +5,7 @@ on: push
 jobs:
   build-site:
     name: Build Site
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
