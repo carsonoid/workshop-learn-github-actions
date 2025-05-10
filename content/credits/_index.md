@@ -10,13 +10,55 @@ that supports it.
 
 ## Artist
 
+
+{{% columns-image ratio="1:3" %}}
+
+{{< figure
+  src="/art/bluegreen-dog-icons/forward.png"
+  link="/credits"
+  width="75%"
+>}}
+
+<--->
+
 **Debbi Humrich**
+
+{{%/ columns-image %}}
 
 ## Site Credits
 
-* [GitHub Actions](https://docs.github.com/en/actions)
-* [Hugo](https://gohugo.io/)
-* [hugo-book theme](https://github.com/alex-shpak/hugo-book)
+{{% columns-image ratio="3:1" %}}
 
+[GitHub Actions](https://docs.github.com/en/actions)
+
+[Hugo](https://gohugo.io/)
+
+[hugo-book theme](https://github.com/alex-shpak/hugo-book)
+
+<--->
+{{< figure
+  src="/art/gray-dog-icons/forward.png"
+  link="/credits"
+  width="75%"
+>}}
+
+{{%/ columns-image %}}
+
+
+## Authors
+
+{{% columns-image ratio="1:3" %}}
+
+{{< figure
+  src="/art/bluegreen-dog-icons/turning.png"
+  link="/credits"
+  width="75%"
+>}}
+
+<--->
 
 {{< authors >}}
+
+{{%/ columns-image %}}
+
+

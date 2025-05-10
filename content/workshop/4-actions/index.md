@@ -441,7 +441,7 @@ try {
 
 
 #### Use It
-{{< slide >}}
+{{< slide last="true" nextRef="credits">}}
 Then reference it in a job by using a local path reference after checkout and build
 
 ```yaml
