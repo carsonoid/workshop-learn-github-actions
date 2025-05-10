@@ -204,7 +204,7 @@ cover here. &lt;a href="https://docs.github.com/en/actions/writing-workflows/wor
  &lt;/div>
  &lt;div class="flex-even markdown-inner" style="flex-grow: 3; text-align: inherit;">
 &lt;p>At this point you should have public web page for the workshop built off your repository and
-hosted under your GitHub handle. This section of the workshop contains a deep-dive on Actions.&lt;/p>
+hosted under your GitHub handle. This section of the workshop contains a deep dive on Actions.&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>Break down the actions currently in the &lt;code>CI/CD&lt;/code> workflow and job.&lt;/p>
