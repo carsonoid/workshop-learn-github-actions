@@ -119,13 +119,13 @@ A few tips:
 A simple one-liner to allow easy "up and enter" iteration is
 
 ```sh
-git add .; git commit -m "fixup-$(date "+%Y%m%dT%H%M%S")"; git push
+git add -A; git commit -m "fixup-$(date "+%Y%m%dT%H%M%S")"; git push
 ```
 
 You can make it into an easy alias with
 
 ```sh
-alias fixup='git add .; git commit -m "fixup-$(date "+%Y%m%dT%H%M%S")"; git push'
+alias fixup='git add -A; git commit -m "fixup-$(date "+%Y%m%dT%H%M%S")"; git push'
 ```
 
 Now all you have to do to test a CICD change is type `fixup` and hit enter!

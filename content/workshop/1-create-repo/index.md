@@ -120,7 +120,7 @@ Press Ctrl+C to stop
 {{< /slide >}}
 
 ## Build the site
-{{< slide last="true" nextRef="/workshop/2-introduction"  >}}
+{{< slide >}}
 
 Running `hugo server` builds the site for local viewing, but it does not build production-ready assets. To do that, simply run `hugo` without any arguments.
 
@@ -148,5 +148,17 @@ Total in 101 ms
 ```
 
 Success! Now we have a `public` directory inside the codespace that contains all the static web assets needed to serve our site.
+
+{{< /slide >}}
+
+
+## Bonus: Set up the fixup alias
+{{< slide last="true" nextRef="/workshop/2-introduction"  >}}
+
+To make life easier when we iterate on the workflows later paste this into your terminal.
+
+```sh
+alias fixup='git add -A; git commit -m "fixup-$(date "+%Y%m%dT%H%M%S")"; git push'
+```
 
 {{< /slide >}}
