@@ -188,7 +188,12 @@ jobs:
     permissions:
       contents: write
     steps:
-      # previous steps omitted for space
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
@@ -227,12 +232,13 @@ jobs:
 
       - name: Build
         run: |
+          # make the assets tgz users need to bootstrap the workshop
+          make workshop-assets
+
           # there is no built-in env variable for the repo name without owner, so we have to parse it out
           REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
           hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
 
-          # make the assets tgz users need to bootstrap the workshop
-          make workshop-assets
 ```
 
 {{< /slide >}}
@@ -266,12 +272,12 @@ jobs:
 
       - name: Build
         run: |
+          # make the assets tgz users need to bootstrap the workshop
+          make workshop-assets
+
           # there is no built-in env variable for the repo name without owner, so we have to parse it out
           REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
           hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
-
-          # make the assets tgz users need to bootstrap the workshop
-          make workshop-assets
 
       - name: Deploy
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/init'
@@ -312,12 +318,12 @@ jobs:
 
       - name: Build
         run: |
+          # make the assets tgz users need to bootstrap the workshop
+          make workshop-assets
+
           # there is no built-in env variable for the repo name without owner, so we have to parse it out
           REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
           hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
-
-          # make the assets tgz users need to bootstrap the workshop
-          make workshop-assets
 
       - name: Deploy
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/init'
@@ -360,7 +366,7 @@ GitHub page.
 {{< /slide>}}
 
 ## Check for the deploy workflow
-{{< slide last="true" nextRef="/workshop/4-actions" >}}
+{{< slide >}}
 
 If everything went well, then you should be able to refresh the `Actions` tab
 and see a second workflow that was automatically triggered by the push to the `gh-pages`
@@ -369,5 +375,29 @@ branch that was done by `peaceiris/actions-gh-pages@v3`
 ![deploy action log](deploy-action-log.png)
 
 ![automatic pages build workflow](pages-build-deployment.png)
+
+> Take some time to click around in the actions UI there is a lot of information and other features
+> of the platform surfaced on this page.
+
+{{< /slide>}}
+
+## Enable GitHub Pages
+{{< slide last="true" nextRef="workshop/4-actions" >}}
+
+1. Click on the "Settings" tab
+2. Click on "Pages"
+3. Under "branch" choose the `gh-pages` branch that was created by the `Publish` step
+4. Click "Save"
+
+![settings](settings.png)
+
+Now navigate back to the "Actions" tab and you should see a new workflow
+
+![new workflow](publish-workflow.png)
+
+If you click on it you will see a good example of a more complicated workflow with multiple nested
+jobs. This is what GitHub uses to actually process pushes to the pages branch to their serving infrastructure.
+
+![Pages workflow](pages-workflow.png)
 
 {{< /slide>}}

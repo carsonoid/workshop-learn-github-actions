@@ -137,7 +137,7 @@ This custom configuration can be provided in the `with` field when needed.
 {{< /slide >}}
 
 ### Custom
-{{< slide last="true" nextRef="/workshop/2-introduction/2-jobs" >}}
+{{< slide >}}
 Steps may also be as simple as running a script:
 
 ```yaml
@@ -253,14 +253,14 @@ jobs:
     name: Build
     runs-on: ubuntu-20.04
     steps:
-  - name: Checkout
-    uses: actions/checkout@v3
+    - name: Checkout
+      uses: actions/checkout@v3
 
-  - name: Setup
-    run: make setup
+    - name: Setup
+      run: make setup
 
-  - name: Build
-    run: ./.github/actions/build
+    - name: Build
+      run: ./.github/actions/build
 ```
 
 {{< /slide >}}
@@ -303,7 +303,7 @@ based on the runner you choose to execute the action on.
 {{< /slide >}}
 
 ### Runner Cost
-{{< slide  last="true" nextRef="/workshop/3-first-workflow" >}}
+{{< slide  last="true" nextRef="workshop/3-first-workflow" >}}
 
 The usage required for this workshop **will barely touch the free tier each public
 repository is alloted**. But if you use actions you should be aware of how billing works.

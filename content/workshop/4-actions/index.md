@@ -27,6 +27,17 @@ hosted under your GitHub handle. This section of the workshop contains a deep di
 
 {{< /slide >}}
 
+## Reminder: Set up the fixup alias
+{{< slide >}}
+
+To make life easier when we iterate on the workflows later paste this into your terminal.
+
+```sh
+alias fixup='git add -A; git commit -m "fixup-$(date "+%Y%m%dT%H%M%S")"; git push'
+```
+
+{{< /slide >}}
+
 ## Expressions
 {{< slide >}}
 
@@ -79,8 +90,8 @@ run: echo "Running job for repo: ${GITHUB_REPOSITORY}"
 There is often runtime metadata that you need to make use of within your workflow or action's `yaml`.
 
 Actions have access to most of the contexts depending on the specific workflow and job run conditions. Contexts typically have much
-more accessible data then `Environment Variables`. But thanks the the `env` section of actions and workflows you can export *any* context data as an evironment variable
-even if that data is not included in [the defaults](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/store-information-in-variables#default-environment-variables)
+more accessible data then `Environment Variables`. But thanks the the `env` section of actions and workflows you can export *any* context data as an environment variable
+even if that data is not included in [the defaults](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs)
 
 ```yaml
 name: Print Sometimes
@@ -88,6 +99,21 @@ if: "${{ job.status == 'success'" }}
 env:
   JOB_STATUS: ${{job.status}} 
 run: echo "Running job for repo: ${GITHUB_REPOSITORY}"
+```
+
+#### [Outputs](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/passing-information-between-jobs)
+
+Actions of any kind can support `outputs`. The outputs available are typically documented
+in the README.md of the action. To use an action's output you need to give it an `id` and use the [`steps` context](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs#steps-context)
+
+```yaml
+  - name: Get an entry with a variable that might contain dots or spaces
+    id: username
+    uses: mikefarah/yq@master
+    with:
+      cmd: yq '.user.name' service.yaml
+  - name: Reuse a variable obtained in another step
+    run: echo ${{ steps.username.outputs.result }}
 ```
 
 {{< /slide >}}
@@ -129,29 +155,11 @@ multiple kinds of reference
 # by tag
 uses: actions/checkout@v3
 
-# by tag
+# by branch
 uses: actions/checkout@beta
 
 # by commit hash (most secure)
 uses: actions/checkout@85e6279cec87321a52edac9c87bce653a07cf6c2
-```
-
-{{< /slide >}}
-
-#### Advanced Usage - Outputs
-{{< slide >}}
-
-Actions of any kind can support `outputs`. The outputs available are typically documented
-in the README.md of the action. To use an action's output you need to give it an `id` and use the [`steps` context](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/accessing-contextual-information-about-workflow-runs#steps-context)
-
-```yaml
-  - name: Get an entry with a variable that might contain dots or spaces
-    id: username
-    uses: mikefarah/yq@master
-    with:
-      cmd: yq '.user.name' service.yaml
-  - name: Reuse a variable obtained in another step
-    run: echo ${{ steps.username.outputs.result }}
 ```
 
 {{< /slide >}}
@@ -225,6 +233,7 @@ runs:
         extended: true
 
     - name: Build
+      shell: bash
       run: |
         # make the assets tgz users need to bootstrap the workshop
         make workshop-assets
@@ -241,11 +250,11 @@ runs:
 
 Then reference it in a job by using a local path reference after checkout.
 
-You can simply remove the old `Setup Hugo` and `Build` steps from `.github/workflows/ci-cd.yaml` and replace them with the new action.
+You can simply remove the old `Setup Hugo` and `Build` steps from `.github/workflows/cicd.yaml` and replace them with the new action.
 
 ```yaml
-- name: Build
-  uses: ./.github/actions/build
+      - name: Build
+        uses: ./.github/actions/build
 ```
 
 {{< hint info icon>}}
@@ -282,33 +291,48 @@ into a repeatable unit.
 
 > Prerequisite: Build a docker image and publish it somewhere that GitHub Actions can reach. I suggest
 > the [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
-> which is easy to use, free, and integres well with GitHub Actions.
+> which is easy to use, free, and integrates well with GitHub Actions.
 
-Outside the image creation (not covered here) building a Docker action is pretty easy. Create a new file at `.github/actions/build/action.yaml` with the content below.
-
-
-```txt
-action.yaml
-```
+Outside the image creation (not covered here) building a Docker action is pretty easy. Create a new file at `.github/actions/cloc/action.yaml` with the content below.
 
 ```yaml
-name: 'Hugo CI'
+name: 'Count lines of code'
 description: 'Run a hugo command in a container with all the dependencies'
 inputs:
-  cmd:
-    description: 'Which hugo command to run'
-    required: true
-    default: 'build'
+  path:
+    description: 'Count lines of code only under the given path'
+    required: false
+    default: "."
 runs:
   using: 'docker'
-  image: hugomods/hugo:ci-non-root # kitchen-sink hugo image
+  image: aldanial/cloc
   args:
-    - ${{ inputs.cmd }}
+    - ${{ inputs.path }}
 ```
 {{< /slide >}}
 
 #### Use It
 {{< slide >}}
+Then reference it in a job by using a local path reference after checkout and build
+
+```yaml
+      - name: CLOC
+        uses: ./.github/actions/cloc
+        with:
+          path: public
+```
+
+Now when you `fixup` the changes you should have a new "CLOC" output in the job
+that tells you how many lines of code are in the rendered `public` directory.
+
+This isn't particularly, but is a nice minimal example of using Docker to provide a runtime
+environment instead of installing things into the runner each time.
+
+This is particularly useful with tools that are built on scripting languages as they are notoriously difficult
+to distribute and set up in CICD.
+
+![cloc output](cloc-action-output.png)
+
 {{< /slide >}}
 
 ### Javascript Actions
@@ -335,10 +359,6 @@ While you can get a lot done with shell scripts, they often have complex depende
 
 Building a javascript action is more involved but starts the same way as others. Create a new file at `.github/actions/info/action.yaml` with the content below.
 
-```txt
-.github/actions/info/action.yaml
-```
-
 ```yaml
 name: 'Info'
 description: 'Print Build Info Using Javascript'
@@ -361,6 +381,7 @@ cd .github/actions/info
 npm init -y
 npm install @actions/core
 npm install @actions/github
+npm install toml
 ```
 
 Now, write the `index.js`
@@ -376,11 +397,11 @@ const fs = require('fs');
 const toml = require('toml');
 
 try {
-  // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
   const fields = core.getInput('fields');
 
   if (!fields) {
+    // Get the JSON webhook payload for the event that triggered the workflow and print it
+    const payload = JSON.stringify(github.context.payload, undefined, 2)
     console.log("Payload");
     console.log(payload);
   } else {
@@ -421,4 +442,13 @@ try {
 
 #### Use It
 {{< slide >}}
+Then reference it in a job by using a local path reference after checkout and build
+
+```yaml
+      - name: Info
+        uses: ./.github/actions/info
+        with:
+          fields: "ref,pusher"
+```
+
 {{< /slide >}}

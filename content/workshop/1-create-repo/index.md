@@ -55,10 +55,10 @@ Everything else can be left unchecked. We will be bootstrapping the contents of 
 
 {{< /slide >}}
 
-## Bootstrap The Repository Contents
+## Launch a codespace session for the repository
 {{< slide >}}
 
-1. Open the respository in GitHub
+1. Open the repository in GitHub
 2. Click the `Code` button
   ![code button](code-button.png)
 1. Click the "Codespaces tab"
@@ -66,11 +66,21 @@ Everything else can be left unchecked. We will be bootstrapping the contents of 
   ![codespace on main](codespace-on-main.png)
 3. Wait for the page to load
 ![new codespace](codespace.png)
-5. Use the terminal to download and extract the assets for the workshop
-    ```bash
-    curl {{< abs-url "workshop-assets.tgz" >}} | tar -zxv
-    ```
-    * Alternatively, you can [click here download the assets]({{< abs-url "workshop-assets.tgz" >}}) then right click in the file explorer and choose "Upload", then run `tar -zxvf workshop-assets.tgz`
+{{< /slide >}}
+
+## Bootstrap The Repository Contents
+{{< slide >}}
+
+Use the terminal to download and extract the assets for the workshop
+
+```bash
+curl {{< abs-url "workshop-assets.tgz" >}} | tar -zxv
+```
+* Alternatively, you can [click here download the assets]({{< abs-url "workshop-assets.tgz" >}}) then right click in the file explorer and choose "Upload", then run `tar -zxvf workshop-assets.tgz`
+
+Once you are done you should see a lot of new files your your workspace.
+
+![Codespace with files](codespace-with-files.png)
 
 {{< /slide >}}
 
@@ -80,7 +90,7 @@ Everything else can be left unchecked. We will be bootstrapping the contents of 
 The default codespace image comes with `hugo` pre-installed, but it does not have some features required by this site, so we need to install the extended edition:
 
 ```bash
-curl -L https://github.com/gohugoio/hugo/releases/download/v0.134.3/hugo_extended_0.145.0_linux-amd64.tar.gz | tar -zxv hugo
+curl -L https://github.com/gohugoio/hugo/releases/download/v0.145.0/hugo_extended_0.145.0_linux-amd64.tar.gz | tar -zxv hugo
 ```
 
 Then run the version we installed:
@@ -88,6 +98,20 @@ Then run the version we installed:
 ```bash
 ./hugo server
 ```
+
+{{< hint warning icon>}}
+### False 404!
+
+Codespaces is going to pop up a prompt to automatically forward you to the running server.
+
+You *will* get a 404 by default. This is because you need to access the site under a base url
+instead of `/workshop-learn-github-actions`
+
+You must manually add the url base for the proxy to work!
+{{< /hint >}}
+
+
+Sample output
 
 ```txt
 @carsonoid ➜ /workspaces/workshop-learn-github-actions (main) $ hugo server
@@ -111,16 +135,41 @@ Built in 52 ms
 Environment: "development"
 Serving pages from disk
 Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
-Web Server is available at //localhost:1313/ (bind address 127.0.0.1) 
+Web Server is available at //localhost:1313/workshop-learn-github-actions/ (bind address 127.0.0.1) 
 Press Ctrl+C to stop
 ```
 
-> You can even view the site by selecting "open in browser" when codespace pops up.
+{{< /slide >}}
+
+### Fun: Add yourself to the authors
+{{< slide >}}
+
+Make your mark! Open up the `config.toml` and add a new line to the `authors` section:
+
+```toml
+[params]
+  # Add a name or alias to this list as you go through the workshop.
+  Authors = [
+    "Carson Anderson"
+  ]
+```
+
+```toml
+[params]
+  # Add a name or alias to this list as you go through the workshop.
+  Authors = [
+    "Carson Anderson",
+    "Tami R"
+  ]
+```
+
+Then navigate to the "Credits" page on your proxy page and see that `hugo` has automatically rebuilt the site and you are now
+an author in the workshop chain!
 
 {{< /slide >}}
 
 ## Build the site
-{{< slide >}}
+{{< slide last="true" nextRef="workshop/2-introduction/"  >}}
 
 Running `hugo server` builds the site for local viewing, but it does not build production-ready assets. To do that, simply run `hugo` without any arguments.
 
@@ -148,17 +197,5 @@ Total in 101 ms
 ```
 
 Success! Now we have a `public` directory inside the codespace that contains all the static web assets needed to serve our site.
-
-{{< /slide >}}
-
-
-## Bonus: Set up the fixup alias
-{{< slide last="true" nextRef="/workshop/2-introduction"  >}}
-
-To make life easier when we iterate on the workflows later paste this into your terminal.
-
-```sh
-alias fixup='git add -A; git commit -m "fixup-$(date "+%Y%m%dT%H%M%S")"; git push'
-```
 
 {{< /slide >}}
