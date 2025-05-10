@@ -73,31 +73,88 @@ Some types of Actions:
 - Docker
 - Composite
 
-> There is a deep-dive on action types later in the workshop
+> There is a [deep dive on Actions](/workshop/4-actions/) later in the workshop
 
 {{< /columns-image >}}
-{{< /slide >}}
 
-### Example
-{{< slide >}}
-A  very simple yaml definition for a "Build" action might look like this:
+{{< hint warning icon>}}
+### A note about terms
 
-```yaml
-name: Build
-run: hugo
-```
+* `action`: An encapsulated behavior. Usually doing something like compiling code or running tests.
+* `step`: An instruction to a Job to **execute** a specific action.
 
-This action simply defines a human-readble name for the action and tells GitHub to execute the `hugo` command
-on the runner.
+In programming terms: an action *defines* a function and a step *calls* it.
 
-{{< hint danger icon>}}
-### Runners have state!
+### But...
 
-There are many different runners that are provided by GitHub. You are also able to create
-and register your own runners to run workloads. The capabilities of the step can change dramatically
-based on the runner you choose to execute the action on.
+The community (and this workshop) tends to use the two terms interchangeably.
 {{< /hint >}}
 
+{{< /slide >}}
+
+### Where do actions come from?
+{{< slide >}}
+
+There are 2 sources of actions:
+
+* Custom actions you write yourself
+  * [Covered in the deep dive on Actions](/workshop/4-actions/)
+* Actions you source from the community
+  * Discoverable in the [Marketplace](https://github.com/marketplace?type=actions)
+
+{{< hint info icon>}}
+### More information is coming
+
+If you have questions about actions/steps just hang tight. Later sections in the
+workshop cover all of these in more detail. For now just focus on understanding the
+yaml structure.
+{{< /hint >}}
+
+{{< /slide >}}
+
+### Community Example
+{{< slide >}}
+A very basic example of a step might be to fetch the code for the current repo.
+
+```yaml
+- name: Checkout
+  uses: actions/checkout@v3
+```
+{{< /slide >}}
+
+### Community Example - Configured
+{{< slide >}}
+Steps may have configuration, the format and specifics of the configuration are dependent on action being used.
+This custom configuration can be provided in the `with` field when needed.
+
+```yaml
+- name: Checkout
+  uses: actions/checkout@v3
+  with:
+    submodules: true
+    fetch-depth: 0
+```
+{{< /slide >}}
+
+### Custom
+{{< slide last="true" nextRef="/workshop/2-introduction/2-jobs" >}}
+Steps may also be as simple as running a script:
+
+```yaml
+- name: Build
+  run: hugo --minify
+```
+
+Complex scripts may use the yaml multiline syntax to provide longer scripts inline in the yaml.
+
+```yaml
+- name: Build
+  run: |
+    echo "doing thing"
+    date
+    sleep 1
+    echo "done"
+```
 {{< /slide >}}
 
 ## Jobs
@@ -119,32 +176,38 @@ Jobs typically define things like:
 - `if` conditions to limit when they will run (optional)
 - Actions (steps) to execute as part of the job
 
-{{< hint danger icon>}}
-## Jobs Have State!
-All the steps in a job are run on the same host without any automatic cleanup between them. This is fundamentally different from
-many other CI/CD systems. Especially those build on containers.
-{{< /hint >}}
-
 {{< /columns-image >}}
-
-
 {{</ slide >}}
 
 
 ### Example
 {{< slide >}}
 
-A simple yaml definition for a `Build` job containing our `Build` step might look like this:
+A simple yaml definition for a might look like this:
+
+1. Check out the repo using the official action
+2. Setup the code for building by running `make`
+3. Build the project using a custom action defined in the repo
 
 ```yaml
 name: Build
 runs-on: ubuntu-20.04
 steps:
+  - name: Checkout
+    uses: actions/checkout@v3
+
+  - name: Setup
+    run: make setup
+
   - name: Build
-    run: hugo
+    run: ./.github/actions/build
 ```
 
-Notice the `Build` step from is now nested in the `steps` list
+{{< hint danger icon>}}
+## Jobs Have State!
+All the steps in a job are run on the same host without any automatic cleanup between them. This is fundamentally different from
+many other CI/CD systems. Especially those build on containers.
+{{< /hint >}}
 
 {{</ slide >}}
 
@@ -179,6 +242,9 @@ Workflow runs can be triggered by many different things:
 
 ### Example
 {{< slide >}}
+
+Notice we have now nested the example job inside the `jobs` section of the workflow.
+
 ```yaml
 name: CI/CD
 on: push # The trigger conditions
@@ -187,11 +253,15 @@ jobs:
     name: Build
     runs-on: ubuntu-20.04
     steps:
-      - name: Build
-        run: hugo
-```
+  - name: Checkout
+    uses: actions/checkout@v3
 
-Notice the `Build` job from is now nested in the `jobs` list
+  - name: Setup
+    run: make setup
+
+  - name: Build
+    run: ./.github/actions/build
+```
 
 {{< /slide >}}
 
@@ -221,6 +291,14 @@ There are [many common runners](https://docs.github.com/en/actions/writing-workf
 {{< /hint >}}
 
 {{< /columns-image >}}
+
+{{< hint danger icon>}}
+### Runner choice can change everything!
+
+There are many different runners that are provided by GitHub. You are also able to create
+and register your own runners to run workloads. The capabilities of the step can change dramatically
+based on the runner you choose to execute the action on.
+{{< /hint >}}
 
 {{< /slide >}}
 

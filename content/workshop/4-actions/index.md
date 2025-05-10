@@ -19,7 +19,7 @@ params:
 <--->
 
 At this point you should have public web page for the workshop built off your repository and
-hosted under your GitHub handle. This section of the workshop contains a deep-dive on Actions.
+hosted under your GitHub handle. This section of the workshop contains a deep dive on Actions.
 
 - Break down the actions currently in the `CI/CD` workflow and job.
 - Guide you through two kinds of custom actions you can use to enhance your current workflow.

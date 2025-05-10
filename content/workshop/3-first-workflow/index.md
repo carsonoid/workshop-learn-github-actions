@@ -144,17 +144,37 @@ our static web site from the workshop code, we need to first clone the repositor
 from GitHub.
 
 We can do this with the `actions/checkout` action which is an offical action [provided and maintained by GitHub directly](https://github.com/actions/checkout).
+You can see all other available `with` options in the repo or [marketplace page](https://github.com/marketplace/actions/checkout).
 
 Things to note about this action:
 
 1. It references a github repository by name using the `uses` field
-   1. It is pinned to a specific tag in the  by using the `@` sign in the action names. This is required, GitHub actions does not have an automatic "latest" tag for actions. (this is a good thing!)
-2. TODO HERE
+   * It is pinned to a specific tag in the  by using the `@` sign in the action names. This is required, GitHub actions does not have an automatic "latest" tag for actions. (this is a good thing!)
+   * We will go over other ways to reference actions in the [deep dive on Actions](/workshop/4-actions/)
+2. We use  the `submodules: true` to tell the action to automatically sync the "theme" submodule.
+3. We use `fetch-depth: 0` to tell the action to not clone the entire git history, just the latest files.
 
 {{< /slide >}}
 
 ### Add the hugo install step
 {{< slide >}}
+
+Our next step leverages a community provided action. These work the same way as official GitHub Actions. This action
+encapsulates installing hugo into the runner so it is available to later steps.
+
+Again, note how we are using `with` to customize the behavior of the action. Available inputs to this action are
+documented in the [repo for the action](https://github.com/peaceiris/actions-hugo) which is also surfaced in the
+[GitHub Actions Marketplace](https://github.com/marketplace/actions/hugo-setup)
+
+{{< hint alert icon>}}
+# Be Careful!
+
+While it is common to use community actions, be aware that you are effectively running 3rd party
+code in the runner. That code will have access to any repository secrets, runtime environments, and
+files that you have set up in the job.
+
+Best-practice is to fully vet the code before using it. Just as you would with 3rd party dependencies in your code base.
+{{< /hint >}}
 
 ```yaml
 name: CI/CD
@@ -168,12 +188,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          submodules: true
-          fetch-depth: 0
-
+      # previous steps omitted for space
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
@@ -215,6 +230,9 @@ jobs:
           # there is no built-in env variable for the repo name without owner, so we have to parse it out
           REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
           hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
+
+          # make the assets tgz users need to bootstrap the workshop
+          make workshop-assets
 ```
 
 {{< /slide >}}
@@ -251,6 +269,9 @@ jobs:
           # there is no built-in env variable for the repo name without owner, so we have to parse it out
           REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
           hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
+
+          # make the assets tgz users need to bootstrap the workshop
+          make workshop-assets
 
       - name: Deploy
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/init'
@@ -294,6 +315,9 @@ jobs:
           # there is no built-in env variable for the repo name without owner, so we have to parse it out
           REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
           hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"
+
+          # make the assets tgz users need to bootstrap the workshop
+          make workshop-assets
 
       - name: Deploy
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/init'

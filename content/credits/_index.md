@@ -12,8 +12,6 @@ that supports it.
 
 **Debbi Humrich**
 
-If you like the artwork and would like to commission your own you can contact Debbi at **TODO**
-
 ## Site Credits
 
 * [GitHub Actions](https://docs.github.com/en/actions)
