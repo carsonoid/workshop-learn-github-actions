@@ -1,4 +1,4 @@
-# Workshop: Guts of Git
+# Workshop: Learn GitHub Actions
 
 You can develop or run this site locally using [`hugo`](https://gohugo.io/installation/)
 

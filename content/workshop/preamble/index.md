@@ -105,7 +105,7 @@ much more secure and easier to serve and are required if you want to host your s
 {{< /slide >}}
 
 ## Working With `git` based CICD
-{{< slide last="true" nextRef="/workshop/1-create-repo/" >}}
+{{< slide last="true" nextRef="workshop/1-create-repo/" >}}
 
 Using yaml files and git to configure CICD comes with many, many benefits. But it can
 also be incredibly frustrating when you are going through the inevitable trial and error

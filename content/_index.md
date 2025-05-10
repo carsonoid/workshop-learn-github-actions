@@ -3,6 +3,7 @@ title: Introduction
 ---
 
 # Learn GitHub Actions By Deploying This Workshop
+
 {{< slide first="true" >}}
 
 {{< columns-image ratio="1:3" >}}
@@ -24,6 +25,18 @@ All of the artwork in this workshop is human generated. For more information on 
 {{< /hint >}}
 
 {{</ columns-image >}}
+
+## Share this workshop
+
+The workshop is designed to be self-replicating. Encourage others to replicate it by sharing one of the urls below.
+
+```bash
+{{% ref "/" %}}
+```
+```bash
+https://tinyurl.com/actions-workshop
+```
+
 {{< /slide >}}
 
 ## Get Started

@@ -225,8 +225,10 @@ runs:
         extended: true
 
     - name: Build
-      shell: bash
       run: |
+        # make the assets tgz users need to bootstrap the workshop
+        make workshop-assets
+
         # there is no built-in env variable for the repo name without owner, so we have to parse it out
         REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d'/' -f2)
         hugo --minify -b "https://${GITHUB_REPOSITORY_OWNER}.github.io/$REPO_NAME/"

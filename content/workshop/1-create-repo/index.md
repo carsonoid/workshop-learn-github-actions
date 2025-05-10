@@ -27,7 +27,7 @@ We are going to make a new repository using the GitHub web interface.
 {{< hint danger >}}
 ## If you want to follow along: do not fork
 
-For the purposes of this workshop, start from a completely empty repostory. While forking is normally fine, doing so will make
+For the purposes of this workshop, start from a completely empty repository. While forking is normally fine, doing so will make
 it impossible to follow along in the workshop as it is designed.
 
 {{< /hint >}}
@@ -37,17 +37,19 @@ it impossible to follow along in the workshop as it is designed.
 ## Instructions
 {{< slide >}}
 
-Open up the [New Repository Page](https://github.com/new) and fill it out with these suggested settings:
+Open up the <a href="https://github.com/new" target="_blank">New Repository Page</a> and fill it out with these suggested settings:
 
 * Template: `No Template`
+  * This field may not exist for some users.
 * Owner: `Your GitHub User`
 * Name: `workshop-learn-github-actions`
   * This can be the same for everyone since it is namespaced under your user
 * Visibility: `Public`
-  * GitHub Actions are availabile to *both* public and private repositories, Each repository gets a number of free "minutes" of action time per month.
+  * GitHub Actions are available to *both* public and private repositories, Each repository gets a number of free "minutes" of action time per month.
   * But, we will be using GitHub Pages to serve the static assets, which will require the repository to be public.
+* Check the "Add a README file" box
 
-Everything else can be left unchecked. We will be bootstraping the contents of the repo in a later step
+Everything else can be left unchecked. We will be bootstrapping the contents of the repo in a later step
 
 ![New Repository Setup Page](create-page.png)
 
@@ -120,7 +122,7 @@ Press Ctrl+C to stop
 ## Build the site
 {{< slide last="true" nextRef="/workshop/2-introduction"  >}}
 
-Runing `hugo server` builds the site for local viewing, but it does not build production-ready assets. To do that, simply run `hugo` without any arguments.
+Running `hugo server` builds the site for local viewing, but it does not build production-ready assets. To do that, simply run `hugo` without any arguments.
 
 ```bash
 ./hugo
