@@ -6,7 +6,7 @@ params:
 ---
 
 ## Introducing GitHub Actions
-{{< slide first="true" >}}
+{{< slide first="true"  prevRef="workshop/1-create-repo/">}}
 
 {{< columns-image ratio="1:3" >}}
 {{< figure

@@ -6,7 +6,7 @@ params:
 ---
 
 # Workshop Preamble
-{{< slide first="true">}}
+{{< slide first="true" prevRef="workshop">}}
 
 {{< hint info icon>}}
 Serverless!

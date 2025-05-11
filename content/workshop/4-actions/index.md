@@ -7,7 +7,7 @@ params:
 
 
 # Actions
-{{< slide first="true" prevRef="workshop/2-introduction/3-workflows/">}}
+{{< slide first="true" prevRef="workshop/3-first-workflow/">}}
 
 {{< columns-image ratio="1:3">}}
 {{< figure
@@ -441,7 +441,7 @@ try {
 
 
 #### Use It
-{{< slide last="true" nextRef="credits">}}
+{{< slide last="true" nextRef="workshop/closing">}}
 Then reference it in a job by using a local path reference after checkout and build
 
 ```yaml

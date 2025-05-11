@@ -6,7 +6,7 @@ params:
 ---
 
 # First Workflow
-{{< slide first="true" >}}
+{{< slide first="true"  prevRef="workshop/2-introduction/">}}
 
 {{< columns-image ratio="1:3" >}}
 {{< figure

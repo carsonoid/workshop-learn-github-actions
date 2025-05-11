@@ -6,7 +6,7 @@ params:
 ---
 
 # Step 1: Create the Repository
-{{< slide first="true" >}}
+{{< slide first="true"  prevRef="workshop/preamble">}}
 
 {{< columns-image ratio="1:3">}}
 {{< figure

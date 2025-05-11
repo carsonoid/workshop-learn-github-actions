@@ -5,7 +5,7 @@ weight: 1
 
 # Workshop: Learning GitHub Actions
 
-{{< slide first="true" prevRef="/">}}
+{{< slide first="true" prevRef=".">}}
 
 ## What you need
 
