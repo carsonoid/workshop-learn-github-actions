@@ -354,7 +354,7 @@ Ok... now what? We pushed the update but how do we know if it is working?
 {{< /slide >}}
 
 ## Watching a workflow
-{{< slide last="true" nextRef="/workshop/4-actions" >}}
+{{< slide last="true" >}}
 
 
 Luckily, GitHub provides a very useful UI to help us track workflows and check
