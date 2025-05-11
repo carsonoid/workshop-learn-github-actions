@@ -38,6 +38,9 @@ by deploying the workshop you just deployed!
 ## More Things To Learn
 {{< slide nextRef="credits">}}
 
+* [Save and transfer artifacts](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/storing-and-sharing-data-from-a-workflow)
+  * Share results from builds
+  * Pass files between jobs
 * [Run services during builds](https://docs.github.com/en/actions/use-cases-and-examples/using-containerized-services/about-service-containers)
   * Run your database/message queue/cache for integration testing
 * [Run multiple inter-dependent jobs](https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/using-jobs-in-a-workflow#example-requiring-successful-dependent-jobs)
