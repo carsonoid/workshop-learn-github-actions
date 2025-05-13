@@ -8,6 +8,8 @@ bookCollapseSection: false
 A big thank you to everyone who has contributed to the enhancement and proliferation of this workshop and the ecosystem
 that supports it.
 
+If you liked this workshop style and want to learn more about `git` please check out the Guts of Git workshop at https://guts-of-git.carson-anderson.com/
+
 ## Artist
 
 
